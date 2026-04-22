@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Индивидуальные консультации — Ярослава Шушина</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Page reset ── */
+        .kp-section { padding: 72px 0; }
+        .kp-section--dark { background: var(--text-dark); }
+        .kp-section--light { background: var(--white); }
+        .kp-section--gray  { background: var(--light-gray); }
+        .kp-section--beige { background: var(--beige); }
+
+        .kp-label {
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--salmon);
+            display: block;
+            margin-bottom: 14px;
+        }
+        .kp-h1 {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .kp-h2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 36px;
+            text-align: center;
+        }
+        .kp-h2--light { color: var(--white); }
+
+        /* ── Hero ── */
+        .kp-hero {
+            background: var(--text-dark);
+            padding: 130px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .kp-hero::after {
+            content: '';
+            position: absolute;
+            top: -80px; right: -80px;
+            width: 400px; height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(249,150,165,.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .kp-hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 64px;
+            align-items: center;
+        }
+        .kp-hero p {
+            font-size: 16px;
+            color: rgba(255,255,255,.6);
+            line-height: 1.7;
+            max-width: 520px;
+            margin-bottom: 36px;
+        }
+        .kp-hero-photo {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            background: linear-gradient(160deg, #3d2535 0%, #5a3545 100%);
+        }
+        .kp-hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+        /* ── For whom ── */
+        .kp-forwho-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .kp-forwho-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 32px 32px 28px;
+            border-top: 4px solid var(--accent, var(--medium-pink));
+        }
+        .kp-forwho-card--parents { --accent: var(--medium-pink); }
+        .kp-forwho-card--specs   { --accent: var(--salmon); }
+        .kp-forwho-card h3 {
+            font-size: 17px;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+        }
+        .kp-forwho-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .kp-forwho-card ul li {
+            font-size: 14px;
+            color: var(--text-mid);
+            line-height: 1.5;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .kp-forwho-card ul li::before {
+            content: '—';
+            color: var(--accent, var(--medium-pink));
+            font-weight: 900;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ── Tags ── */
+        .kp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .kp-tag {
+            background: var(--white);
+            border: 1.5px solid rgba(180,80,80,.15);
+            border-radius: 50px;
+            padding: 9px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+            transition: border-color .2s, color .2s, background .2s;
+        }
+        .kp-tag:hover {
+            border-color: var(--medium-pink);
+            color: var(--dark-pink);
+            background: var(--light-pink);
+        }
+
+        /* ── Formats accordion ── */
+        .kp-formats {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border: 1.5px solid rgba(180,80,80,.12);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        .kp-format-item {
+            border-bottom: 1.5px solid rgba(180,80,80,.1);
+        }
+        .kp-format-item:last-child { border-bottom: none; }
+        .kp-format-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px 28px;
+            text-align: left;
+            font-family: var(--font);
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            transition: background .2s;
+        }
+        .kp-format-btn:hover { background: var(--light-pink); }
+        .kp-format-btn[aria-expanded="true"] { color: var(--dark-pink); }
+        .kp-format-arrow {
+            font-size: 18px;
+            transition: transform .25s;
+            flex-shrink: 0;
+            color: var(--salmon);
+        }
+        .kp-format-btn[aria-expanded="true"] .kp-format-arrow { transform: rotate(180deg); }
+        .kp-format-body {
+            display: none;
+            padding: 0 28px 22px;
+            font-size: 14px;
+            color: var(--text-mid);
+            line-height: 1.65;
+        }
+        .kp-format-body.open { display: block; }
+
+        /* ── How it goes ── */
+        .kp-how-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+        .kp-schedule-card, .kp-prep-card {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: var(--radius-lg);
+            padding: 28px 32px;
+        }
+        .kp-schedule-card h4, .kp-prep-card h4 {
+            font-size: 15px;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .kp-schedule-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+            font-size: 14px;
+            color: rgba(255,255,255,.7);
+        }
+        .kp-schedule-row:last-child { border-bottom: none; }
+        .kp-schedule-name { font-weight: 700; }
+        .kp-schedule-val { color: var(--medium-pink); font-weight: 800; white-space: nowrap; }
+        .kp-prep-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .kp-prep-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            color: rgba(255,255,255,.7);
+            line-height: 1.5;
+        }
+        .kp-prep-check {
+            width: 22px; height: 22px;
+            border-radius: 50%;
+            background: rgba(249,150,165,.15);
+            border: 1.5px solid var(--medium-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--medium-pink);
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        /* ── Booking ── */
+        .kp-booking {
+            padding: 80px 0;
+            background: var(--text-dark);
+            text-align: center;
+        }
+        .kp-booking h2 { color: var(--white); }
+        .kp-booking p {
+            font-size: 15px;
+            color: rgba(255,255,255,.55);
+            line-height: 1.7;
+            max-width: 480px;
+            margin: -16px auto 36px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .kp-h1 { font-size: 36px; }
+        }
+        @media (max-width: 768px) {
+            .kp-hero { padding: 100px 0 60px; }
+            .kp-hero-inner { grid-template-columns: 1fr; }
+            .kp-hero-photo { max-width: 200px; }
+            .kp-h1 { font-size: 30px; }
+            .kp-forwho-grid { grid-template-columns: 1fr; }
+            .kp-how-grid { grid-template-columns: 1fr; }
+            .kp-format-btn { padding: 18px 20px; font-size: 14px; }
+            .kp-format-body { padding: 0 20px 18px; }
+            .kp-section { padding: 52px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+    <div class="container">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <img src="photo/logo.png" alt="Психоголик" class="logo-img">
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#webinars">Вебинары</a></li>
+                <li><a href="index.html#consultations">Консультации</a></li>
+                <li><a href="index.html#materials">Материалы</a></li>
+                <li><a href="index.html#performances">Выступления</a></li>
+                <li><a href="index.html#blog">Блог</a></li>
+                <li><a href="index.html#podcasts">Подкасты</a></li>
+                <li><a href="index.html#contacts">Контакты</a></li>
+                <li><a href="index.html#ceu" class="nav-ceu">CEU</a></li>
+            </ul>
+            <button class="burger" id="burger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="kp-hero">
+    <div class="container">
+        <div class="kp-hero-inner">
+            <div>
+                <span class="kp-label">Ярослава Шушина</span>
+                <h1 class="kp-h1">Индивидуальные<br>консультации</h1>
+                <p>Работаю с родителями детей с РАС и с АВА-специалистами. Разбираем конкретную ситуацию, выстраиваем программу, находим решение — онлайн, без воды.</p>
+                <a href="https://psihogolik.getcourse.ru/BloknotPsihogolika" target="_blank" class="btn-yellow">Записаться</a>
+            </div>
+            <div class="kp-hero-photo">
+                <img src="photo/hero/IMG_2855 1.png" alt="Ярослава Шушина">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="kp-section kp-section--gray">
+    <div class="container">
+        <h2 class="kp-h2">Запросы на консультацию</h2>
+        <div class="kp-forwho-grid">
+            <div class="kp-forwho-card kp-forwho-card--parents">
+                <h3>Для родителей:</h3>
+                <ul>
+                    <li>Ребёнок с РАС — с чего начать и куда двигаться</li>
+                    <li>Как выстроить режим дня и домашнюю программу</li>
+                    <li>Сложное поведение: агрессия, самостимуляция, отказы</li>
+                    <li>Как взаимодействовать с командой специалистов</li>
+                    <li>Не понимаю, что делает терапевт — объяснить на языке АВА</li>
+                    <li>Как развивать речь и коммуникацию дома</li>
+                </ul>
+            </div>
+            <div class="kp-forwho-card kp-forwho-card--specs">
+                <h3>Для специалистов и руководителей центров:</h3>
+                <ul>
+                    <li>Разбор сложного случая — поведение, программа, динамика</li>
+                    <li>Клиническое решение: как выбрать вмешательство</li>
+                    <li>Работа с командой и наставничество над специалистами</li>
+                    <li>Подготовка к сертификации IBAO / BCaBA / BCBA</li>
+                    <li>Выгорание и профессиональный рост в АВА</li>
+                    <li>Выстраивание работы центра: протоколы, процессы, контроль</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TAGS — WHO COMES -->
+<section class="kp-section kp-section--light">
+    <div class="container">
+        <h2 class="kp-h2">Кто берёт консультации у меня</h2>
+        <div class="kp-tags">
+            <span class="kp-tag">Родители детей с РАС и особенностями развития</span>
+            <span class="kp-tag">Начинающие АВА-терапевты</span>
+            <span class="kp-tag">Опытные специалисты</span>
+            <span class="kp-tag">Супервизоры</span>
+            <span class="kp-tag">Руководители центров</span>
+            <span class="kp-tag">Те, кто готовится к сертификации</span>
+            <span class="kp-tag">Специалисты смежных профессий</span>
+        </div>
+    </div>
+</section>
+
+<!-- FORMATS -->
+<section class="kp-section kp-section--gray">
+    <div class="container">
+        <h2 class="kp-h2">Форматы консультаций</h2>
+        <div class="kp-formats">
+
+            <div class="kp-format-item">
+                <button class="kp-format-btn" aria-expanded="false">
+                    Наблюдение за занятием
+                    <span class="kp-format-arrow">∨</span>
+                </button>
+                <div class="kp-format-body">
+                    Подключаюсь к онлайн-занятию в роли наблюдателя. Смотрю на работу специалиста или родителя с учеником, фиксирую, что работает, что нет. После — разбор и конкретные рекомендации.
+                </div>
+            </div>
+
+            <div class="kp-format-item">
+                <button class="kp-format-btn" aria-expanded="false">
+                    Общий взгляд на ситуацию
+                    <span class="kp-format-arrow">∨</span>
+                </button>
+                <div class="kp-format-body">
+                    Разговор о ситуации в целом. Рассказываете о ребёнке, о специалисте, о том, что происходит. Вместе выстраиваем картину и определяем приоритеты.
+                </div>
+            </div>
+
+            <div class="kp-format-item">
+                <button class="kp-format-btn" aria-expanded="false">
+                    Ответы на вопросы / Поиск решения
+                    <span class="kp-format-arrow">∨</span>
+                </button>
+                <div class="kp-format-body">
+                    Приходите с конкретным вопросом или задачей. Разбираем вместе, ищем решение, проверяем логику. Хорошо подходит для тех, кто уже знает АВА и нуждается в «втором мнении».
+                </div>
+            </div>
+
+            <div class="kp-format-item">
+                <button class="kp-format-btn" aria-expanded="false">
+                    Мастер-класс на определённую тему
+                    <span class="kp-format-arrow">∨</span>
+                </button>
+                <div class="kp-format-body">
+                    Мини-обучение под ваш запрос: вербальное поведение, шейпинг, работа с поведением, функциональная оценка. Тему выбираете вы — я готовлюсь и провожу в формате интенсивной встречи.
+                </div>
+            </div>
+
+            <div class="kp-format-item">
+                <button class="kp-format-btn" aria-expanded="false">
+                    Помощь в подготовке к выступлению
+                    <span class="kp-format-arrow">∨</span>
+                </button>
+                <div class="kp-format-body">
+                    Помогу подготовить доклад, вебинар или мастер-класс на тему АВА. Разбираем структуру, содержание, проверяем факты и делаем так, чтобы это было применимо для аудитории.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT GOES -->
+<section class="kp-section kp-section--dark">
+    <div class="container">
+        <h2 class="kp-h2 kp-h2--light">Как проходит консультация?</h2>
+        <div class="kp-how-grid">
+            <div class="kp-schedule-card">
+                <h4>Расписание и длительность</h4>
+                <div class="kp-schedule-row">
+                    <span class="kp-schedule-name">Стандартная встреча</span>
+                    <span class="kp-schedule-val">60 минут</span>
+                </div>
+                <div class="kp-schedule-row">
+                    <span class="kp-schedule-name">Расширенный разбор</span>
+                    <span class="kp-schedule-val">90 минут</span>
+                </div>
+                <div class="kp-schedule-row">
+                    <span class="kp-schedule-name">Регулярная супервизия</span>
+                    <span class="kp-schedule-val">раз в 2 недели</span>
+                </div>
+                <div class="kp-schedule-row">
+                    <span class="kp-schedule-name">Месячное сопровождение</span>
+                    <span class="kp-schedule-val">по договорённости</span>
+                </div>
+                <div class="kp-schedule-row">
+                    <span class="kp-schedule-name">Платформа</span>
+                    <span class="kp-schedule-val">Zoom / Telegram</span>
+                </div>
+            </div>
+
+            <div class="kp-prep-card">
+                <h4>Как подготовиться к встрече?</h4>
+                <div class="kp-prep-list">
+                    <div class="kp-prep-item">
+                        <span class="kp-prep-check">✓</span>
+                        Опишите запрос в деталях при записи — это сэкономит время на встрече
+                    </div>
+                    <div class="kp-prep-item">
+                        <span class="kp-prep-check">✓</span>
+                        При необходимости сделайте видеозапись занятия или ситуации заранее
+                    </div>
+                    <div class="kp-prep-item">
+                        <span class="kp-prep-check">✓</span>
+                        Подготовьте документы, если есть: программы, данные, оценки
+                    </div>
+                    <div class="kp-prep-item">
+                        <span class="kp-prep-check">✓</span>
+                        Договоритесь с коллегами или партнёром — лучше присутствовать всем участникам
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOOKING -->
+<section class="kp-booking">
+    <div class="container">
+        <h2 class="kp-h2 kp-h2--light" style="margin-bottom:20px">Как записаться на консультацию?</h2>
+        <p>Для записи нажмите кнопку ниже или напишите мне в Telegram — отвечу и подберу удобное время.</p>
+        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+            <a href="https://psihogolik.getcourse.ru/BloknotPsihogolika" target="_blank" class="btn-yellow">Записаться</a>
+            <a href="https://t.me/ABA_psihogolik" target="_blank" class="btn-outline-light">Написать в Telegram</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="ceu">
+    <div class="container">
+        <div class="footer-top">
+            <a href="index.html" class="footer-logo-text">ПСИХО-<br>ГОЛИК</a>
+            <div class="footer-nav">
+                <a href="index.html#webinars">Вебинары</a>
+                <a href="index.html#consultations">Консультации</a>
+                <a href="index.html#materials">Материалы</a>
+                <a href="index.html#performances">Выступления</a>
+                <a href="index.html#blog">Блог</a>
+                <a href="index.html#podcasts">Подкасты</a>
+                <a href="index.html#contacts">Контакты</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Ярослава Шушина. Все права защищены.</span>
+            <a href="privacy.html" class="footer-privacy">Политика конфиденциальности</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    /* Header scroll */
+    const header = document.getElementById('header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+    }
+
+    /* Burger */
+    const burger = document.getElementById('burger');
+    const links  = document.getElementById('nav-links');
+    if (burger && links) {
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('open');
+            links.classList.toggle('open');
+            document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+        });
+        links.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                burger.classList.remove('open');
+                links.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    /* Accordion */
+    document.querySelectorAll('.kp-format-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const isOpen = btn.getAttribute('aria-expanded') === 'true';
+            document.querySelectorAll('.kp-format-btn').forEach(b => {
+                b.setAttribute('aria-expanded', 'false');
+                b.nextElementSibling.classList.remove('open');
+            });
+            if (!isOpen) {
+                btn.setAttribute('aria-expanded', 'true');
+                btn.nextElementSibling.classList.add('open');
+            }
+        });
+    });
+</script>
+</body>
+</html>
