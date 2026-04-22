@@ -251,18 +251,27 @@ function initNav() {
     const links  = document.getElementById('nav-links');
     if (!burger || !links) return;
 
-    burger.addEventListener('click', () => {
+    function closeNav() {
+        burger.classList.remove('open');
+        links.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    burger.addEventListener('click', e => {
+        e.stopPropagation();
         burger.classList.toggle('open');
         links.classList.toggle('open');
         document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
     });
 
     links.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-            burger.classList.remove('open');
-            links.classList.remove('open');
-            document.body.style.overflow = '';
-        });
+        a.addEventListener('click', closeNav);
+    });
+
+    document.addEventListener('click', e => {
+        if (links.classList.contains('open') && !links.contains(e.target) && !burger.contains(e.target)) {
+            closeNav();
+        }
     });
 }
 
