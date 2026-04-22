@@ -336,6 +336,31 @@ function initCookieBanner() {
 }
 
 /* ══════════════════════════════════════
+   HERO BUBBLES
+══════════════════════════════════════ */
+function initHeroBubbles() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    const colours = ['rgba(249,150,165,.18)', 'rgba(250,190,62,.14)', 'rgba(192,131,110,.12)'];
+
+    for (let i = 0; i < 10; i++) {
+        const b = document.createElement('span');
+        b.className = 'hero-bubble';
+        const size = 24 + Math.random() * 60;
+        b.style.cssText = `
+            width:${size}px; height:${size}px;
+            left:${Math.random() * 100}%;
+            bottom:${Math.random() * 80}%;
+            background:${colours[Math.floor(Math.random() * colours.length)]};
+            animation-duration:${5 + Math.random() * 8}s;
+            animation-delay:${-Math.random() * 8}s;
+        `;
+        hero.appendChild(b);
+    }
+}
+
+/* ══════════════════════════════════════
    CONTACTS FORM
 ══════════════════════════════════════ */
 function initContactsForm() {
@@ -362,4 +387,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initGcOverlay();
     initCookieBanner();
     initContactsForm();
+    initHeroBubbles();
 });
