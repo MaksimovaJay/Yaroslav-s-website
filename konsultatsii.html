@@ -271,6 +271,70 @@
             margin: -16px auto 36px;
         }
 
+        /* ── Schedule slots ── */
+        .kp-schedule-date {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 32px;
+        }
+        .kp-schedule-note {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-mid);
+            margin-top: -20px;
+            margin-bottom: 36px;
+        }
+        .kp-slots {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .kp-slot {
+            border-radius: var(--radius-lg);
+            padding: 24px 16px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: transform .2s;
+        }
+        .kp-slot--available {
+            background: var(--light-pink);
+            border-color: var(--medium-pink);
+        }
+        .kp-slot--available:hover { transform: translateY(-3px); }
+        .kp-slot--booked {
+            background: var(--light-gray);
+            border-color: transparent;
+            opacity: .55;
+        }
+        .kp-slot-time {
+            display: block;
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        .kp-slot--booked .kp-slot-time {
+            text-decoration: line-through;
+            color: var(--text-mid);
+        }
+        .kp-slot-status {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .kp-slot--available .kp-slot-status { color: var(--dark-pink); }
+        .kp-slot--booked .kp-slot-status { color: var(--text-mid); }
+
+        @media (max-width: 600px) {
+            .kp-slots { grid-template-columns: repeat(2, 1fr); }
+        }
+
         /* ── Responsive ── */
         @media (max-width: 1024px) {
             .kp-h1 { font-size: 36px; }
@@ -326,6 +390,43 @@
             <div class="kp-hero-photo">
                 <img src="photo/hero/photoPersonConsultationSection.JPG" alt="Ярослава Шушина">
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="kp-section kp-section--light">
+    <div class="container">
+        <h2 class="kp-h2">Ближайший день записи</h2>
+        <!-- ДАТА: меняй только текст внутри тега -->
+        <p class="kp-schedule-date">10 июня 2026</p>
+        <p class="kp-schedule-note">по московскому времени · 55–60 минут · онлайн</p>
+        <div class="kp-slots">
+
+            <!-- СЛОТ 1: kp-slot--available = свободно / kp-slot--booked = занято -->
+            <div class="kp-slot kp-slot--available">
+                <span class="kp-slot-time">9:30</span>
+                <span class="kp-slot-status">Свободно</span>
+            </div>
+
+            <!-- СЛОТ 2 -->
+            <div class="kp-slot kp-slot--booked">
+                <span class="kp-slot-time">11:00</span>
+                <span class="kp-slot-status">Занято</span>
+            </div>
+
+            <!-- СЛОТ 3 -->
+            <div class="kp-slot kp-slot--available">
+                <span class="kp-slot-time">13:00</span>
+                <span class="kp-slot-status">Свободно</span>
+            </div>
+
+            <!-- СЛОТ 4 -->
+            <div class="kp-slot kp-slot--available">
+                <span class="kp-slot-time">14:30</span>
+                <span class="kp-slot-status">Свободно</span>
+            </div>
+
         </div>
     </div>
 </section>
@@ -419,7 +520,7 @@
                     <span class="kp-format-arrow">∨</span>
                 </button>
                 <div class="kp-format-body">
-                    За 4 дня до консультации я дополнительно напомню о встрече и отправлю ссылку. Никаких сюрпризов — всё предсказуемо и по плану.
+                    За 4 дня до консультации я дополнительно напомню о встрече и отправлю ссылку.
                 </div>
             </div>
 
@@ -487,8 +588,7 @@
         <h2 class="kp-h2 kp-h2--light" style="margin-bottom:20px">Как записаться на консультацию?</h2>
         <p>Напишите в Telegram — отвечу, уточню свободные места и варианты оплаты. Место бронируется только после оплаты.</p>
         <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-            <a href="https://psihogolik.getcourse.ru/BloknotPsihogolika" target="_blank" class="btn-yellow">Записаться</a>
-            <a href="https://t.me/ABA_psihogolik" target="_blank" class="btn-outline-light">Написать в Telegram</a>
+            <a href="https://t.me/ABA_psihogolik" target="_blank" class="btn-yellow">Записаться</a>
         </div>
     </div>
 </section>

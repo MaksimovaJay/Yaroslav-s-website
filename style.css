@@ -899,14 +899,15 @@ ul { list-style: none; }
     margin-bottom: 6px;
 }
 .podcast-ceu {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     background: var(--yellow);
     color: var(--text-dark);
     font-weight: 800;
     font-size: 12px;
-    padding: 3px 10px;
+    padding: 5px 12px;
     border-radius: 50px;
-    margin-bottom: 8px;
+    line-height: 1;
 }
 .podcast-info p {
     font-size: 13px;
@@ -1326,13 +1327,15 @@ ul { list-style: none; }
 }
 
 .podcast-price-tag {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     background: var(--beige);
     color: var(--text-dark);
     font-weight: 800;
     font-size: 12px;
-    padding: 3px 10px;
+    padding: 5px 12px;
     border-radius: 50px;
+    line-height: 1;
 }
 
 .podcast-info {
