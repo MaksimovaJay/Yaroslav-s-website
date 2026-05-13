@@ -246,6 +246,17 @@ ul { list-style: none; }
 }
 .nav-links .nav-ceu:hover { background: #f5b02e; color: var(--text-dark); }
 
+@media (max-width: 768px) {
+    .nav-links .nav-ceu {
+        background: none;
+        animation: none;
+        font-weight: 700;
+        color: var(--text-dark);
+        padding: 0;
+    }
+    .nav-links .nav-ceu:hover { background: none; }
+}
+
 /* Burger */
 .burger {
     display: none;
