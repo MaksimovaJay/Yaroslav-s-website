@@ -2082,6 +2082,16 @@ ul { list-style: none; }
         padding-bottom: env(safe-area-inset-bottom, 0px);
         box-shadow: 0 -4px 20px rgba(45,32,32,.08);
     }
+    .mobile-bottom-nav::after {
+        content: '';
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: env(safe-area-inset-bottom, 0px);
+        background: var(--white);
+        z-index: 299;
+    }
 
     .mbn-item {
         flex: 1;
