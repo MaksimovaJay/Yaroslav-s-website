@@ -199,10 +199,8 @@ ul { list-style: none; }
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 200;
-    background: rgba(254, 243, 243, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(219,123,139,.15);
+    background: #fef3f3;
+    border-bottom: 1px solid rgba(219,123,139,.2);
     transition: box-shadow .3s;
 }
 .header.scrolled { box-shadow: 0 2px 20px rgba(180,80,80,.1); }
