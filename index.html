@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Психоголик — Ярослава Шушина | АВА-терапевт</title>
+    <meta name="description" content="Сертифицированный поведенческий аналитик IBA, провайдер CEU, автор подкаста «Психоголик» и журнала «Блокнот Психоголика». Помогаю организовать качественную АВА-терапию по всему миру.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maksimovajay.github.io/">
+    <meta property="og:title" content="Психоголик — Ярослава Шушина | АВА-терапевт">
+    <meta property="og:description" content="Сертифицированный поведенческий аналитик IBA, провайдер CEU, автор подкаста «Психоголик» и журнала «Блокнот Психоголика». Помогаю организовать качественную АВА-терапию по всему миру.">
+    <meta property="og:image" content="https://maksimovajay.github.io/photo/hero/IMG_2855 1.png">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Психоголик — Ярослава Шушина">
+    <meta name="twitter:description" content="Сертифицированный поведенческий аналитик IBA, автор подкаста «Психоголик» и журнала «Блокнот Психоголика».">
+    <meta name="twitter:image" content="https://maksimovajay.github.io/photo/hero/IMG_2855 1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
@@ -1066,5 +1077,14 @@
 </div>
 
 <script src="script.js"></script>
+
+<button class="back-to-top" id="backToTop" aria-label="Наверх">↑</button>
+<script>
+    const btn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
 </body>
 </html>

@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блокнот Психоголика — журнал Ярославы Шушиной</title>
+    <meta name="description" content="Авторский журнал об АВА-терапии, людях и профессии. Живые истории специалистов, родителей и людей с аутизмом. Первый выпуск — о выгорании.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maksimovajay.github.io/journal.html">
+    <meta property="og:title" content="Блокнот Психоголика — журнал Ярославы Шушиной">
+    <meta property="og:description" content="Авторский журнал об АВА-терапии, людях и профессии. Живые истории специалистов, родителей и людей с аутизмом.">
+    <meta property="og:image" content="https://maksimovajay.github.io/photo/db/cover_db.png">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Блокнот Психоголика">
+    <meta name="twitter:description" content="Авторский журнал об АВА-терапии, людях и профессии.">
+    <meta name="twitter:image" content="https://maksimovajay.github.io/photo/db/cover_db.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
@@ -427,6 +438,15 @@
             });
         });
     }
+</script>
+
+<button class="back-to-top" id="backToTop" aria-label="Наверх">↑</button>
+<script>
+    const btn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 </script>
 </body>
 </html>
