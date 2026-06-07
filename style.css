@@ -2040,6 +2040,8 @@ ul { list-style: none; }
     text-decoration: none;
     color: var(--text-dark);
     font-size: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
     transition: border-color .2s, background .2s, transform .15s;
 }
 .social-link:hover {
