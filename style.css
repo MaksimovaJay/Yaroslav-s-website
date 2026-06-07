@@ -2005,6 +2005,68 @@ ul { list-style: none; }
 .contact-card--gc         .contact-card-icon { background: #5b8cff; }
 .contact-card--gc         .contact-action { color: #5b8cff; }
 
+/* Direct-contact grid: max 2 cards side by side */
+.contacts-grid--direct {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 660px;
+    margin-bottom: 0;
+}
+
+/* Blog / social links row */
+.contacts-socials {
+    margin-top: 32px;
+}
+.contacts-socials-label {
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--text-mid);
+    margin-bottom: 14px;
+}
+.contacts-socials-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 50px;
+    background: var(--white);
+    border: 1.5px solid #ead7d7;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 14px;
+    transition: border-color .2s, background .2s, transform .15s;
+}
+.social-link:hover {
+    border-color: var(--medium-pink);
+    background: var(--light-pink);
+    transform: translateY(-2px);
+}
+.social-link-icon {
+    display: flex;
+    flex-shrink: 0;
+}
+.social-link-name {
+    font-weight: 700;
+}
+.social-link-handle {
+    color: var(--text-mid);
+    font-size: 13px;
+}
+
+/* Per-platform icon color */
+.social-link--instagram .social-link-icon { color: #c13584; }
+.social-link--youtube   .social-link-icon { color: #cc0000; }
+.social-link--vk        .social-link-icon { color: #4680c2; }
+.social-link--yandex    .social-link-icon { color: #fc3f1d; }
+.social-link--boosty    .social-link-icon { color: #f4831f; }
+.social-link--gc        .social-link-icon { color: #5b8cff; }
+
 /* Contact form block */
 .contacts-form-wrap {
     background: var(--white);
