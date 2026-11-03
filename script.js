@@ -3,13 +3,24 @@
 ══════════════════════════════════════ */
 const coursesData = [
     {
+        badge: 'Запись тренинга',
+        title: 'Подсказки в АВА-терапии',
+        author: 'Дарья Ли-Романова',
+        desc: 'Как помогать ребёнку и не формировать зависимость. 6 часов: теория и практика с реальным ребёнком — современные подходы Autism Partnership.',
+        ceu: '6 CEU',
+        price: '11 000 ₽',
+        buyUrl: 'https://psihogolik.getcourse.ru/tips',
+        page: 'webinar-podskazki.html'
+    },
+    {
         badge: 'Вебинар в записи',
         title: 'Развитие самодосуговой деятельности у детей с РАС',
         author: 'Ярослава Шушина + Елена Марчук',
         desc: 'Вебинар с видеолекцией, 3 рабочими тетрадями, гайдом и разбором вопросов.',
         ceu: '1 CEU Ethics + 1,5 CEU General',
         price: '6 000 ₽',
-        buyUrl: 'https://psihogolik.getcourse.ru/dosug'
+        buyUrl: 'https://psihogolik.getcourse.ru/dosug',
+        page: 'webinar-dosug.html'
     },
     {
         badge: 'Вебинар в записи',
@@ -18,7 +29,8 @@ const coursesData = [
         desc: 'Как проводить АВА-занятия онлайн так же результативно, как офлайн — программы, управление вниманием, работа с поведением, реальные кейсы и готовые шаблоны.',
         ceu: '3 CEU General',
         price: '6 000 ₽',
-        buyUrl: 'https://psihogolik.getcourse.ru/ABA_therapy_online'
+        buyUrl: 'https://psihogolik.getcourse.ru/ABA_therapy_online',
+        page: 'webinar-online.html'
     },
     {
         badge: 'Вебинар в записи',
@@ -27,7 +39,8 @@ const coursesData = [
         desc: 'Как работает обучение через связи между действиями и последствиями — жетоны, таймеры, техника «чистого стола», оперантное и респондентное обусловливание. Видеоразборы из реальных сессий.',
         ceu: '1,5 CEU General',
         price: '4 000 ₽',
-        buyUrl: 'https://psihogolik.getcourse.ru/Formation_of_Conditions'
+        buyUrl: 'https://psihogolik.getcourse.ru/Formation_of_Conditions',
+        page: 'webinar-conditioning.html'
     },
     {
         badge: 'Вебинар в записи',
@@ -36,7 +49,8 @@ const coursesData = [
         desc: 'О развитии внимания у детей с РАС — Slap Jack, Кодовое слово, аудиальные и визуальные задания. Пошаговое формирование устойчивого, избирательного и распределённого внимания.',
         ceu: '2 CEU General',
         price: '4 000 ₽',
-        buyUrl: 'https://psihogolik.getcourse.ru/Developing_attention'
+        buyUrl: 'https://psihogolik.getcourse.ru/Developing_attention',
+        page: 'webinar-attention.html'
     }
 ];
 
@@ -61,6 +75,7 @@ let lastJokeIndex = -1;
 function renderCourse(index) {
     const c = coursesData[index];
     const card = document.getElementById('course-card');
+    if (!card) return;
     card.innerHTML = `
         <div class="course-badge">${c.badge}</div>
         <h3>${c.title}</h3>
@@ -71,7 +86,8 @@ function renderCourse(index) {
             <strong class="course-price">${c.price}</strong>
         </div>
         <div class="course-btns">
-            <a href="${c.buyUrl}" target="_blank" class="btn-yellow small">Купить доступ</a>
+            <a href="${c.page}" class="btn-pink small">Подробнее о вебинаре</a>
+            <a href="${c.buyUrl}" target="_blank" rel="noopener" class="btn-yellow small">Купить доступ</a>
         </div>
     `;
 }
@@ -95,7 +111,7 @@ function initCourses() {
 /* ══════════════════════════════════════
    GENERIC SLIDER
 ══════════════════════════════════════ */
-function initSlider(trackId, prevId, nextId, visibleCount) {
+function initSlider(trackId, prevId, nextId) {
     const track  = document.getElementById(trackId);
     const prev   = document.getElementById(prevId);
     const next   = document.getElementById(nextId);
@@ -113,9 +129,17 @@ function initSlider(trackId, prevId, nextId, visibleCount) {
         return item.offsetWidth + 20;
     }
 
+    function getVisibleCount() {
+        const itemWidth = getItemWidth();
+        if (!itemWidth) return 1;
+        return Math.max(1, Math.round(track.parentElement.clientWidth / itemWidth));
+    }
+
     function update() {
         const count  = track.children.length;
-        const maxIdx = Math.max(0, count - visibleCount);
+        const maxIdx = Math.max(0, count - getVisibleCount());
+        const wrapper = track.closest('.slider-wrapper');
+        if (wrapper) wrapper.classList.toggle('slider-static', maxIdx === 0);
         current = Math.min(Math.max(current, 0), maxIdx);
         track.style.transform = `translateX(-${current * getItemWidth()}px)`;
         prev.disabled = current === 0;
@@ -155,50 +179,6 @@ function initJoke() {
                 result.classList.add('visible');
             });
         });
-    });
-}
-
-/* ══════════════════════════════════════
-   INVITE MODAL
-══════════════════════════════════════ */
-function initInviteModal() {
-    const openBtn  = document.getElementById('invite-btn');
-    const modal    = document.getElementById('invite-modal');
-    const closeBtn = document.getElementById('invite-close');
-    const frame    = document.getElementById('invite-frame');
-    if (!openBtn || !modal || !closeBtn) return;
-
-    function showModal() {
-        modal.removeAttribute('hidden');
-        requestAnimationFrame(() => modal.classList.add('visible'));
-        document.body.style.overflow = 'hidden';
-        if (frame && frame.src === 'about:blank') {
-            const src = frame.dataset.src;
-            if (src && src !== 'ВСТАВЬ_ССЫЛКУ_ЯФ_ЗДЕСЬ') frame.src = src;
-        }
-    }
-
-    function hideModal() {
-        modal.classList.remove('visible');
-        document.body.style.overflow = '';
-        setTimeout(() => modal.setAttribute('hidden', ''), 250);
-    }
-
-    openBtn.addEventListener('click', showModal);
-    closeBtn.addEventListener('click', hideModal);
-    modal.addEventListener('click', e => { if (e.target === modal) hideModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') hideModal(); });
-}
-
-/* ══════════════════════════════════════
-   BLOG SHOW MORE
-══════════════════════════════════════ */
-function initBlogMore() {
-    const btn = document.getElementById('blog-more-btn');
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.yt-card.yt-hidden').forEach(c => c.classList.remove('yt-hidden'));
-        btn.parentElement.remove();
     });
 }
 
@@ -291,7 +271,7 @@ function initScrollHeader() {
 ══════════════════════════════════════ */
 function initScrollFade() {
     const targets = document.querySelectorAll(
-        '.material-card, .review-card, .podcast-card, .course-item, .video-card, .webinar-card, .yt-card'
+        '.podcast-card, .course-item, .wp-program-item, .wp-included-card, .wp-review'
     );
 
     const observer = new IntersectionObserver(entries => {
@@ -304,17 +284,16 @@ function initScrollFade() {
         });
     }, { threshold: 0.12 });
 
-    targets.forEach((el, i) => {
+    targets.forEach(el => {
+        const siblingIndex = Array.prototype.indexOf.call(el.parentElement.children, el);
+        const delay = Math.min(siblingIndex, 5) * 60;
         el.style.opacity   = '0';
         el.style.transform = 'translateY(24px)';
-        el.style.transition = `opacity .5s ease ${i * 60}ms, transform .5s ease ${i * 60}ms`;
+        el.style.transition = `opacity .5s ease ${delay}ms, transform .5s ease ${delay}ms`;
         observer.observe(el);
     });
 }
 
-/* ══════════════════════════════════════
-   INIT
-══════════════════════════════════════ */
 /* ══════════════════════════════════════
    COOKIE BANNER
 ══════════════════════════════════════ */
@@ -323,13 +302,15 @@ function initCookieBanner() {
     const btn    = document.getElementById('cookie-accept');
     if (!banner || !btn) return;
 
-    if (localStorage.getItem('cookieAccepted')) {
+    let accepted = false;
+    try { accepted = !!localStorage.getItem('cookieAccepted'); } catch (e) {}
+    if (accepted) {
         banner.style.display = 'none';
         return;
     }
 
     btn.addEventListener('click', () => {
-        localStorage.setItem('cookieAccepted', '1');
+        try { localStorage.setItem('cookieAccepted', '1'); } catch (e) {}
         banner.classList.add('hidden');
         setTimeout(() => banner.style.display = 'none', 350);
     });
@@ -361,6 +342,18 @@ function initHeroBubbles() {
 }
 
 /* ══════════════════════════════════════
+   BACK TO TOP
+══════════════════════════════════════ */
+function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+/* ══════════════════════════════════════
    CONTACTS FORM
 ══════════════════════════════════════ */
 function initContactsForm() {
@@ -377,15 +370,14 @@ function initContactsForm() {
 
 document.addEventListener('DOMContentLoaded', () => {
     initCourses();
-    initSlider('rev-track', 'rev-prev', 'rev-next', 3);
+    initSlider('rev-track', 'rev-prev', 'rev-next');
     initJoke();
     initNav();
     initScrollHeader();
     initScrollFade();
-    initInviteModal();
-    initBlogMore();
     initGcOverlay();
     initCookieBanner();
     initContactsForm();
     initHeroBubbles();
+    initBackToTop();
 });

@@ -436,6 +436,10 @@ ul { list-style: none; }
 }
 
 .course-item {
+    border: none;
+    font-family: var(--font);
+    text-align: left;
+    width: 100%;
     background: var(--white);
     border-radius: var(--radius-md);
     padding: 16px 20px;
@@ -1108,7 +1112,7 @@ ul { list-style: none; }
     flex-wrap: wrap;
     gap: 10px;
 }
-.social-link {
+.footer-social-link {
     width: 44px; height: 44px;
     border-radius: 50%;
     background: rgba(255,255,255,.08);
@@ -1119,13 +1123,13 @@ ul { list-style: none; }
     transition: background .2s, color .2s, transform .15s;
     position: relative;
 }
-.social-link:hover {
+.footer-social-link:hover {
     background: var(--medium-pink);
     color: var(--white);
     transform: translateY(-3px);
 }
 /* Всплывающая подпись */
-.social-link::after {
+.footer-social-link::after {
     content: attr(aria-label);
     position: absolute;
     bottom: calc(100% + 8px);
@@ -1142,10 +1146,10 @@ ul { list-style: none; }
     pointer-events: none;
     transition: opacity .2s;
 }
-.social-link:hover::after { opacity: 1; }
+.footer-social-link:hover::after { opacity: 1; }
 
-.social-link--boosty:hover { background: #f4831f; }
-.social-link--gc:hover     { background: #5b8cff; }
+.footer-social-link--boosty:hover { background: #f4831f; }
+.footer-social-link--gc:hover     { background: #5b8cff; }
 
 .footer-cta {
     text-align: center;
@@ -2247,4 +2251,430 @@ ul { list-style: none; }
     .consult-title { font-size: 28px; }
     .footer-grid { grid-template-columns: 1fr; gap: 24px; }
     .footer-col--brand { grid-column: auto; }
+}
+
+/* ══════════════════════════════════════
+   SMALL ADDITIONS (reviews, journal promo, contacts)
+══════════════════════════════════════ */
+.review-source {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--salmon);
+    line-height: 1.4;
+}
+.slider-static .slider-arrow { display: none; }
+
+.journal-promo-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.journal-promo-btns .btn-outline-pink {
+    color: var(--dark-pink);
+    border-color: var(--dark-pink);
+}
+.journal-promo-btns .btn-outline-pink:hover { color: var(--white); background: var(--dark-pink); }
+
+.contact-desc {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
+   WEBINAR PAGES (webinar-*.html)
+══════════════════════════════════════ */
+.wp-section { padding: 72px 0; }
+.wp-section--light { background: var(--white); }
+.wp-section--gray  { background: var(--light-gray); }
+.wp-section--beige { background: var(--beige); }
+.wp-section--dark  { background: var(--text-dark); }
+
+.wp-h2 {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 36px;
+    text-align: center;
+}
+.wp-h2--light { color: var(--white); }
+
+/* ── Hero ── */
+.wp-hero {
+    background: var(--text-dark);
+    padding: 130px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+.wp-hero::after {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(249,150,165,.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+.wp-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.wp-back {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,.5);
+    margin-bottom: 24px;
+    transition: color .2s;
+}
+.wp-back:hover { color: var(--medium-pink); }
+.wp-label {
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--salmon);
+    display: block;
+    margin-bottom: 14px;
+}
+.wp-h1 {
+    font-size: 46px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+.wp-lead {
+    font-size: 17px;
+    color: rgba(255,255,255,.7);
+    line-height: 1.65;
+    max-width: 560px;
+    margin-bottom: 24px;
+}
+.wp-authors {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--medium-pink);
+    margin-bottom: 28px;
+}
+.wp-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.wp-chip {
+    font-size: 12px;
+    font-weight: 800;
+    color: rgba(255,255,255,.85);
+    border: 1.5px solid rgba(255,255,255,.2);
+    border-radius: 50px;
+    padding: 6px 14px;
+}
+
+/* ── Ticket (price card) ── */
+.wp-ticket {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+.wp-ticket-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--dark-pink);
+    background: var(--light-pink);
+    border-radius: 50px;
+    padding: 5px 12px;
+    margin-bottom: 16px;
+}
+.wp-ticket-price {
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--text-dark);
+    line-height: 1;
+    margin-bottom: 6px;
+}
+.wp-ticket-ceu {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--salmon);
+    margin-bottom: 20px;
+}
+.wp-ticket-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+    padding-top: 20px;
+    border-top: 1.5px dashed rgba(180,80,80,.18);
+}
+.wp-ticket-list li {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.45;
+    display: flex;
+    gap: 10px;
+}
+.wp-ticket-list li::before {
+    content: '\2713';
+    color: var(--medium-pink);
+    font-weight: 900;
+    flex-shrink: 0;
+}
+.wp-ticket-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+.wp-ticket-help {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-mid);
+}
+.wp-ticket-help:hover { color: var(--dark-pink); }
+
+/* ── Pain points ── */
+.wp-pains {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 880px;
+    margin: 0 auto;
+}
+.wp-pain {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.5;
+    border-left: 4px solid var(--medium-pink);
+}
+
+/* ── Program ── */
+.wp-program {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.wp-program-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: var(--light-pink);
+    border-radius: var(--radius-md);
+    padding: 22px 26px;
+}
+.wp-program-num {
+    flex-shrink: 0;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--medium-pink);
+    color: var(--white);
+    font-weight: 900;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wp-program-item p {
+    font-size: 15px;
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding-top: 8px;
+}
+
+/* ── Included ── */
+.wp-included {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.wp-included-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    border-top: 4px solid var(--medium-pink);
+}
+.wp-included-card:nth-child(3n+2) { border-top-color: var(--salmon); }
+.wp-included-card:nth-child(3n)   { border-top-color: var(--yellow); }
+.wp-included-card h3 {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+.wp-included-card p {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.55;
+}
+
+/* ── Speakers ── */
+.wp-speakers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+.wp-speaker {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+}
+.wp-speaker-avatar {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--medium-pink), var(--salmon));
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.wp-speaker-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.wp-speaker-name { font-size: 16px; font-weight: 900; color: var(--white); }
+.wp-speaker-role { font-size: 13px; color: rgba(255,255,255,.6); margin-top: 2px; }
+
+/* ── Reviews ── */
+.wp-reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+.wp-review {
+    background: #f7ece5;
+    border-radius: var(--radius-md);
+    padding: 26px 24px;
+}
+.wp-review p {
+    font-size: 15px;
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 14px;
+}
+.wp-review-name { font-size: 14px; font-weight: 900; color: var(--dark-pink); }
+
+/* ── Other webinars ── */
+.wp-others {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+.wp-other {
+    display: block;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 20px 22px;
+    box-shadow: 0 2px 12px rgba(180,80,80,.07);
+    transition: transform .2s, box-shadow .2s;
+}
+.wp-other:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(180,80,80,.14); }
+.wp-other-title { font-size: 15px; font-weight: 900; color: var(--text-dark); line-height: 1.35; margin-bottom: 8px; }
+.wp-other-meta { font-size: 12px; font-weight: 800; color: var(--salmon); }
+
+/* ── Final CTA ── */
+.wp-cta { padding: 80px 0; background: var(--text-dark); text-align: center; }
+.wp-cta p {
+    font-size: 15px;
+    color: rgba(255,255,255,.6);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: -16px auto 32px;
+}
+.wp-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 1024px) {
+    .wp-h1 { font-size: 36px; }
+    .wp-hero-inner { grid-template-columns: 1fr 300px; gap: 36px; }
+}
+@media (max-width: 768px) {
+    .wp-hero { padding: 100px 0 56px; }
+    .wp-hero-inner { grid-template-columns: 1fr; }
+    .wp-h1 { font-size: 30px; }
+    .wp-lead { font-size: 15px; }
+    .wp-section { padding: 52px 0; }
+    .wp-pains { grid-template-columns: 1fr; }
+    .wp-program-item { padding: 18px; gap: 14px; }
+}
+
+/* ── Webinar pages: sublead, note, FAQ ── */
+.wp-sublead {
+    text-align: center;
+    font-size: 15px;
+    color: var(--text-mid);
+    max-width: 620px;
+    margin: -20px auto 32px;
+    line-height: 1.6;
+}
+.wp-section--tight { padding: 0 0 48px; }
+.wp-note {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--beige);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.55;
+}
+.wp-faq {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.wp-faq-item {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+.wp-faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 19px 22px;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+.wp-faq-item summary::-webkit-details-marker { display: none; }
+.wp-faq-item summary::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--light-pink);
+    color: var(--dark-pink);
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wp-faq-item[open] summary::after { content: '\2212'; background: var(--dark-pink); color: var(--white); }
+.wp-faq-item p {
+    padding: 0 22px 20px;
+    font-size: 14.5px;
+    color: var(--text-mid);
+    line-height: 1.65;
 }

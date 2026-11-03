@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="icon" href="photo/logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-    <script src="https://forms.yandex.ru/_static/embed.js"></script>
+    <script src="https://forms.yandex.ru/_static/embed.js" defer></script>
 </head>
 <body>
 
@@ -33,13 +33,11 @@
             </a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#webinars">Вебинары</a></li>
-                <li><a href="#consultations">Консультации</a></li>
-                <li><a href="#performances">Выступления</a></li>
-                <li><a href="#blog">Блог</a></li>
                 <li><a href="#podcasts">Подкасты</a></li>
-                <li><a href="journal.html">Журнал</a></li>
+                <li><a href="#performances">Конференции</a></li>
+                <li><a href="#consultations">Консультации</a></li>
+                <li><a href="journal.html" class="nav-ceu">Журнал</a></li>
                 <li><a href="#contacts">Контакты</a></li>
-                <li><a href="#ceu" class="nav-ceu">CEU</a></li>
             </ul>
             <button class="burger" id="burger" aria-label="Меню">
                 <span></span><span></span><span></span>
@@ -50,11 +48,11 @@
 
 <!-- ══════════════ HERO ══════════════ -->
 <section class="hero" id="about">
-    <img src="photo/texture/volna-1.png" class="wave wave-1" alt="">
+    <img src="photo/web/wave-1.webp" class="wave wave-1" alt="">
     <div class="container">
         <div class="hero-inner">
             <div class="hero-photo-wrap">
-                <img src="photo/hero/IMG_2855 1.png" alt="Ярослава Шушина" class="hero-photo">
+                <img src="photo/web/hero-yaroslava.webp" alt="Ярослава Шушина" class="hero-photo">
             </div>
             <div class="hero-content">
                 <div class="hero-card">
@@ -85,20 +83,23 @@
     <div class="container">
         <h2 class="section-title">ВЕБИНАРЫ<span class="title-rect"></span></h2>
         <div class="training-inner">
-            <img src="photo/edinorog-sidit.png" alt="Единорог" class="training-unicorn">
+            <img src="photo/web/unicorn-sitting.webp" alt="Единорог" class="training-unicorn">
             <div class="training-list" id="training-list">
-                <div class="course-item active" data-course="0">
+                <button type="button" class="course-item active" data-course="0">
+                    <span>Подсказки в АВА-терапии</span>
+                </button>
+                <button type="button" class="course-item" data-course="1">
                     <span>Самодосуговая деятельность у детей с РАС</span>
-                </div>
-                <div class="course-item" data-course="1">
+                </button>
+                <button type="button" class="course-item" data-course="2">
                     <span>АВА-терапия онлайн</span>
-                </div>
-                <div class="course-item" data-course="2">
+                </button>
+                <button type="button" class="course-item" data-course="3">
                     <span>Формирование обусловленностей</span>
-                </div>
-                <div class="course-item" data-course="3">
+                </button>
+                <button type="button" class="course-item" data-course="4">
                     <span>Как развивать «Внимание»?</span>
-                </div>
+                </button>
             </div>
             <div class="training-right">
                 <div class="course-card" id="course-card"></div>
@@ -108,15 +109,198 @@
 </section>
 
 
+<!-- ══════════════ PODCASTS ══════════════ -->
+<section class="podcasts" id="podcasts">
+    <div class="container">
+        <h2 class="section-title">ПОДКАСТЫ</h2>
+        <p class="section-intro">На этой странице вы найдёте все видеовыпуски АВА-подкаста, за которые выдаются баллы CEU, а также записанные лекции и вебинары — тоже с баллами CEU.</p>
+        <div class="podcasts-grid">
+
+            <div class="podcast-card">
+                <div class="podcast-img pc1">
+                    <img src="photo/web/podcast-01.webp" alt="Что такое круговорот" class="podcast-img-bg" loading="lazy">
+                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
+                    <span class="podcast-ep-num">01</span>
+                    <div class="podcast-play-btn">&#9654;</div>
+                </div>
+                <div class="podcast-info">
+                    <h3>Что такое круговорот?</h3>
+                    <p>Вводный выпуск АВА-подкаста Психоголик.</p>
+                    <div class="podcast-meta">
+                        <span class="podcast-ceu">1 CEU General</span>
+                        <span class="podcast-price-tag">1 000 ₽</span>
+                    </div>
+                    <div class="podcast-btns">
+                        <a href="https://psihogolik.getcourse.ru/What_is_a_cycle" target="_blank" class="btn-pink small">Смотреть</a>
+                        <a href="https://psihogolik.getcourse.ru/What_is_a_cycle" target="_blank" class="btn-yellow small">Купить доступ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="podcast-card">
+                <div class="podcast-img pc2">
+                    <img src="photo/web/podcast-02.webp" alt="Toby Mountjoy" class="podcast-img-bg" loading="lazy">
+                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
+                    <span class="podcast-ep-num">02</span>
+                    <div class="podcast-play-btn">&#9654;</div>
+                </div>
+                <div class="podcast-info">
+                    <h3>АР и АВА. Интервью с Тоби Маутнджоем</h3>
+                    <div class="podcast-guest">Гость: Тоби Маутнджой</div>
+                    <p>Разговор о профессиональной позиции внутри ABA. Как клиническое мышление соотносится с протоколом, какие микро-решения принимает специалист и почему данные — это не всегда trial-by-trial.</p>
+                    <div class="podcast-meta">
+                        <span class="podcast-ceu">1 CEU Cultural</span>
+                        <span class="podcast-price-tag">1 500 ₽</span>
+                    </div>
+                    <div class="podcast-btns">
+                        <a href="https://psihogolik.getcourse.ru/autism_partnership" target="_blank" class="btn-pink small">Смотреть</a>
+                        <a href="https://psihogolik.getcourse.ru/autism_partnership" target="_blank" class="btn-yellow small">Купить доступ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="podcast-card">
+                <div class="podcast-img pc3">
+                    <img src="photo/web/podcast-03.webp" alt="АВА в групповом формате" class="podcast-img-bg" loading="lazy">
+                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
+                    <span class="podcast-ep-num">03</span>
+                    <div class="podcast-play-btn">&#9654;</div>
+                </div>
+                <div class="podcast-info">
+                    <h3>АВА в групповом формате</h3>
+                    <div class="podcast-guest">Гость: Ксения Хвостова</div>
+                    <p>Как выстраивать поведенческую терапию в групповом формате, какие программы работают в группах, реальные примеры из групповых занятий.</p>
+                    <div class="podcast-meta">
+                        <span class="podcast-ceu">1 CEU General</span>
+                        <span class="podcast-price-tag">500 ₽</span>
+                    </div>
+                    <div class="podcast-btns">
+                        <a href="https://psihogolik.getcourse.ru/ABA_therapy_in_a_group_format" target="_blank" class="btn-pink small">Смотреть</a>
+                        <a href="https://psihogolik.getcourse.ru/ABA_therapy_in_a_group_format" target="_blank" class="btn-yellow small">Купить доступ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="podcast-card">
+                <div class="podcast-img pc4">
+                    <img src="photo/web/podcast-04.webp" alt="Как изменилась АВА за 10 лет" class="podcast-img-bg" loading="lazy">
+                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
+                    <span class="podcast-ep-num">04</span>
+                    <div class="podcast-play-btn">&#9654;</div>
+                </div>
+                <div class="podcast-info">
+                    <h3>Как изменилась АВА за 10 лет</h3>
+                    <div class="podcast-guest">Гость: Дарья Ли Романова</div>
+                    <p>Закрытый подкаст об изменениях в профессии за последнее десятилетие.</p>
+                    <div class="podcast-meta">
+                        <span class="podcast-ceu">2 CEU Cultural</span>
+                        <span class="podcast-price-tag">2 500 ₽</span>
+                    </div>
+                    <div class="podcast-btns">
+                        <a href="https://psihogolik.getcourse.ru/private_podcast_with_Daria_Li_Romanova" target="_blank" class="btn-yellow small">Купить доступ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="podcast-card">
+                <div class="podcast-img pc5">
+                    <img src="photo/web/podcast-05.webp" alt="Круглый стол — Вера, культура и АВА-терапия" class="podcast-img-bg" loading="lazy">
+                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
+                    <span class="podcast-ep-num">05</span>
+                    <div class="podcast-play-btn">&#9654;</div>
+                </div>
+                <div class="podcast-info">
+                    <h3>Круглый стол — Вера, культура и АВА-терапия</h3>
+                    <p>5 спикеров из 4 стран: Россия, Кыргызстан, Канада, Израиль. Запись бесплатно на YouTube, баллы CEU — после покупки доступа.</p>
+                    <div class="podcast-meta">
+                        <span class="podcast-ceu">1,5 CEU Cultural</span>
+                        <span class="podcast-price-tag">1 500 ₽</span>
+                    </div>
+                    <div class="podcast-btns">
+                        <a href="https://www.youtube.com/watch?v=tT-9wnKb7nA" target="_blank" rel="noopener" class="btn-pink small">Смотреть</a>
+                        <a href="https://psihogolik.getcourse.ru/krugliistol" target="_blank" class="btn-yellow small">Купить доступ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="podcast-card">
+                <div class="podcast-img pc6">
+                    <img src="photo/web/podcast-06.webp" alt="Коррекция сна у ребёнка с ТМНР" class="podcast-img-bg" loading="lazy">
+                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
+                    <span class="podcast-ep-num">06</span>
+                    <div class="podcast-play-btn">&#9654;</div>
+                </div>
+                <div class="podcast-info">
+                    <h3>Коррекция сна у ребёнка с ТМНР</h3>
+                    <div class="podcast-guest">Ярослава Шушина + Елена Марчук</div>
+                    <p>Научное исследование о поведенческом вмешательстве при нарушениях сна. Вмешательство реализовывал родитель под куратством специалиста онлайн.</p>
+                    <div class="podcast-meta">
+                        <span class="podcast-ceu">1 CEU Supervision</span>
+                        <span class="podcast-price-tag">1 000 ₽</span>
+                    </div>
+                    <div class="podcast-btns">
+                        <a href="https://psihogolik.getcourse.ru/Sleep_correction" target="_blank" class="btn-pink small">Смотреть</a>
+                        <a href="https://psihogolik.getcourse.ru/Sleep_correction" target="_blank" class="btn-yellow small">Купить доступ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="podcast-card">
+                <div class="podcast-img pc7">
+                    <img src="photo/web/podcast-07.webp" alt="Выгорание специалистов помогающих профессий" class="podcast-img-bg" loading="lazy">
+                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
+                    <span class="podcast-ep-num">07</span>
+                    <div class="podcast-play-btn">&#9654;</div>
+                </div>
+                <div class="podcast-info">
+                    <h3>Выгорание специалистов помогающих профессий</h3>
+                    <div class="podcast-guest">Гость: Александра Малыхина</div>
+                    <p>Закрытый подкаст. Три блока: энергия и работа, отношение к себе и работе, тело и здоровье.</p>
+                    <div class="podcast-meta">
+                        <span class="podcast-ceu">1,5 CEU Ethics</span>
+                        <span class="podcast-price-tag">2 000 ₽</span>
+                    </div>
+                    <div class="podcast-btns">
+                        <a href="https://psihogolik.getcourse.ru/Burnout_of_specialists" target="_blank" class="btn-yellow small">Купить доступ</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="podcast-card">
+                <div class="podcast-img pc8">
+                    <img src="photo/web/podcast-08.webp" alt="Путь к качественной жизни ученика с ТМНР" class="podcast-img-bg" loading="lazy">
+                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
+                    <span class="podcast-ep-num">08</span>
+                    <div class="podcast-play-btn">&#9654;</div>
+                </div>
+                <div class="podcast-info">
+                    <h3>Путь к качественной жизни ученика с ТМНР</h3>
+                    <p>ABA-вмешательство через развитие навыка сканирования — без шаблонных протоколов.</p>
+                    <div class="podcast-meta">
+                        <span class="podcast-ceu">1 CEU Supervision</span>
+                        <span class="podcast-price-tag">1 000 ₽</span>
+                    </div>
+                    <div class="podcast-btns">
+                        <a href="https://psihogolik.getcourse.ru/The_path_quality_life" target="_blank" class="btn-pink small">Смотреть</a>
+                        <a href="https://psihogolik.getcourse.ru/The_path_quality_life" target="_blank" class="btn-yellow small">Купить доступ</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
 <!-- ══════════════ PERFORMANCES ══════════════ -->
 <section class="performances" id="performances">
     <div class="container">
-        <h2 class="section-title light">ВЫСТУПЛЕНИЯ<span class="exclaim">!</span></h2>
+        <h2 class="section-title light">КОНФЕРЕНЦИИ<span class="exclaim">!</span></h2>
         <div class="performances-inner">
             <div class="conf-card-wrap">
-                <a href="https://psihogolik.getcourse.ru/aba_con_2026" target="_blank" class="conf-card">
+                <a href="https://psihogolik.getcourse.ru/aba_con_2026" target="_blank" rel="noopener" class="conf-card">
                     <div class="conf-card-img">
-                        <img src="photo/sectionPodcast/confABA2026.png" alt="АВА XXI века — международная конференция">
+                        <img src="photo/web/conf-aba-2026.webp" loading="lazy" alt="АВА XXI века — международная конференция">
                     </div>
                     <div class="conf-card-info">
                         <p class="conf-card-title">АВА XXI века — международная конференция</p>
@@ -138,7 +322,7 @@
     <div class="container">
         <div class="consult-inner">
             <div class="consult-photo-wrap">
-                <img src="photo/фотка за столом с ноутом.jpeg" alt="Ярослава Шушина — консультации" class="consult-photo">
+                <img src="photo/web/consult-desk.webp" alt="Ярослава Шушина — консультации" class="consult-photo" loading="lazy">
             </div>
             <div class="consult-text">
                 <span class="consult-label">Базовая консультация · разовая супервизия</span>
@@ -197,433 +381,15 @@
             <div class="journal-promo-text">
                 <span class="journal-promo-label">Авторский журнал</span>
                 <h2 class="journal-promo-title">Блокнот<br>Психоголика</h2>
-                <p>Живые истории о специалистах, родителях и людях с аутизмом. О многогранности профессии — честно и по-человечески. Первый выпуск — о выгорании.</p>
-                <a href="journal.html" class="btn-yellow">Узнать о журнале</a>
+                <p>Живые истории о специалистах, родителях и людях с аутизмом. О многогранности профессии — честно и по-человечески. Электронная версия — в Telegram по подписке.</p>
+                <div class="journal-promo-btns">
+                    <a href="journal.html" class="btn-yellow">Узнать о журнале</a>
+                    <a href="https://t.me/assistant_unicorn_bot" target="_blank" rel="noopener" class="btn-outline-pink">Подписаться в Telegram</a>
+                </div>
             </div>
             <div class="journal-promo-cover">
-                <img src="photo/db/cover_db.png" alt="Блокнот Психоголика — выпуск №01" class="journal-cover-img">
+                <img src="photo/web/journal-cover.webp" alt="Блокнот Психоголика — выпуск №01" class="journal-cover-img" loading="lazy">
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- ══════════════ BLOG ══════════════ -->
-<section class="blog" id="blog">
-    <div class="container">
-        <h2 class="section-title light">БЛОГ ПСИХОГОЛИКА</h2>
-        <p class="blog-intro">«Всем привет, вы на канале Психоголик!»</p>
-        <div class="videos-blog-grid">
-
-            <a href="https://www.youtube.com/watch?v=CVC0kt_qYYU" target="_blank" class="yt-card">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/CVC0kt_qYYU/hqdefault.jpg" alt="Что такое КРУГОВОРОТ" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Что такое КРУГОВОРОТ, и чем отличается от ТРИАДЫ?!</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=UD_wjMG5Xb8" target="_blank" class="yt-card">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/UD_wjMG5Xb8/hqdefault.jpg" alt="Autism Partnership" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Autism Partnership и АВА. Интервью с Тоби Маутнджоем</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=Qx1M3P13uYg" target="_blank" class="yt-card">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/Qx1M3P13uYg/hqdefault.jpg" alt="Путь к качественной жизни" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Путь к качественной жизни ученика с ТМНР через развитие навыка сканирования</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=wlh4WZq0xnU" target="_blank" class="yt-card">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/wlh4WZq0xnU/hqdefault.jpg" alt="Психиатрия без мифов" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Психиатрия без мифов: когда медикаменты действительно нужны</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=GYmZ6nTyCQc" target="_blank" class="yt-card">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/GYmZ6nTyCQc/hqdefault.jpg" alt="Мультфильмы" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Мультфильмы, которые говорят сердцем</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=cZx_X1w0evw" target="_blank" class="yt-card">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/cZx_X1w0evw/hqdefault.jpg" alt="Форматы АВА терапии" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Форматы АВА терапии</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=HUj1qa8ctLM" target="_blank" class="yt-card">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/HUj1qa8ctLM/hqdefault.jpg" alt="Что такое ТРИАДА" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Что такое ТРИАДА и почему об этом стоит знать каждому АВА-специалисту?</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=tT-9wnKb7nA" target="_blank" class="yt-card">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/tT-9wnKb7nA/hqdefault.jpg" alt="Круглый стол" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Круглый стол — Вера, культура и АВА-терапия</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=JaYxGql5AnQ" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/JaYxGql5AnQ/hqdefault.jpg" alt="Искусство шейпинга" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Искусство шейпинга</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=jTLIXZ9IE0E" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/jTLIXZ9IE0E/hqdefault.jpg" alt="Коррекция сна" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Коррекция сна у ребенка с ТМНР</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=geyC8bK7nso" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/geyC8bK7nso/hqdefault.jpg" alt="Инструкция Notion" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Инструкция Notion для использования Флешкарт</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=oWKhp_tWp9M" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/oWKhp_tWp9M/hqdefault.jpg" alt="АВА для всех" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">АВА для всех: как прикладной анализ изменил нашу жизнь</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=Joj3EC4Yepg" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/Joj3EC4Yepg/hqdefault.jpg" alt="Гид в мире игрушек" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Ваш гид в мире игрушек или «Я опять что-то интересное нашла»</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=wID39HzMUHI" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/wID39HzMUHI/hqdefault.jpg" alt="Путеводитель по IBAO" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Путеводитель по IBAO</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=GAJFFcMbqMY" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/GAJFFcMbqMY/hqdefault.jpg" alt="Обзор игрушек" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Обзор игрушек с Pinduoduo</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=klys-VBM-LI" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/klys-VBM-LI/hqdefault.jpg" alt="Групповые АВА занятия" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Групповые АВА занятия</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=aSSs9WS-v2Q" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/aSSs9WS-v2Q/hqdefault.jpg" alt="АВА блиц" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">АВА блиц. Ответы на вопросы подписчиков</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=XjDhGM8luU8" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/XjDhGM8luU8/hqdefault.jpg" alt="Прямой эфир" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Прямой эфир: «Помогите хоть чем нибудь»</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=CzsMcTH_Kds" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/CzsMcTH_Kds/hqdefault.jpg" alt="Клиническое решение" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Что такое КЛИНИЧЕСКОЕ РЕШЕНИЕ?</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=t2MHJ3ox-4A" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/t2MHJ3ox-4A/hqdefault.jpg" alt="Страхи при РАС" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Прямой эфир: Как работать со страхами у людей с РАС</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=n__7xHpa-0A" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/n__7xHpa-0A/hqdefault.jpg" alt="АВА и родители" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Взаимодействие АВА специалистов и родителей</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=tulGEybYDP8" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/tulGEybYDP8/hqdefault.jpg" alt="Вербальное поведение" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Развитие вербального поведения у людей с Аутизмом</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=huXUSuQogI4" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/huXUSuQogI4/hqdefault.jpg" alt="Мнение об Autism Partnership" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Мнение об Autism Partnership через инсайты специалистов</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=tEwyPSkH2hs" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/tEwyPSkH2hs/hqdefault.jpg" alt="Путь АВА" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Ярослава — Путь АВА От и До</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=oGMM0ratswM" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/oGMM0ratswM/hqdefault.jpg" alt="Новый год" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Как пережить Новый год?</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=JpkPH_97SSI" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/JpkPH_97SSI/hqdefault.jpg" alt="Психосоматика" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Психосоматика, Неврозы и Панические Атаки</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=CWV4inw53QQ" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/CWV4inw53QQ/hqdefault.jpg" alt="Половое воспитание" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Половое воспитание детей с РАС</p></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=oNvunikD83c" target="_blank" class="yt-card yt-hidden">
-                <div class="yt-thumb">
-                    <img src="https://img.youtube.com/vi/oNvunikD83c/hqdefault.jpg" alt="Велисвет метод" loading="lazy">
-                    <div class="yt-play"><div class="yt-play-icon">&#9654;</div></div>
-                </div>
-                <div class="yt-info"><p class="yt-title">Что такое Велисвет метод?</p></div>
-            </a>
-
-        </div>
-        <div class="blog-more">
-            <button class="btn-yellow" id="blog-more-btn">Показать ещё 20 видео</button>
-        </div>
-    </div>
-</section>
-
-<!-- ══════════════ PODCASTS ══════════════ -->
-<section class="podcasts" id="podcasts">
-    <div class="container">
-        <h2 class="section-title">ПОДКАСТЫ</h2>
-        <p class="section-intro">На этой странице вы найдёте все видеовыпуски АВА-подкаста, за которые выдаются баллы CEU, а также записанные лекции и вебинары — тоже с баллами CEU.</p>
-        <div class="podcasts-grid">
-
-            <div class="podcast-card">
-                <div class="podcast-img pc1">
-                    <img src="photo/sectionPodcast/podcasts01.png" alt="Что такое круговорот" class="podcast-img-bg">
-                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
-                    <span class="podcast-ep-num">01</span>
-                    <div class="podcast-play-btn">&#9654;</div>
-                </div>
-                <div class="podcast-info">
-                    <h3>Что такое круговорот?</h3>
-                    <p>Вводный выпуск АВА-подкаста Психоголик.</p>
-                    <div class="podcast-meta">
-                        <span class="podcast-ceu">1 CEU General</span>
-                        <span class="podcast-price-tag">1 000 ₽</span>
-                    </div>
-                    <div class="podcast-btns">
-                        <a href="https://psihogolik.getcourse.ru/What_is_a_cycle" target="_blank" class="btn-pink small">Смотреть</a>
-                        <a href="https://psihogolik.getcourse.ru/What_is_a_cycle" target="_blank" class="btn-yellow small">Купить доступ</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="podcast-card">
-                <div class="podcast-img pc2">
-                    <img src="photo/sectionPodcast/TobiMaun.png" alt="Toby Mountjoy" class="podcast-img-bg">
-                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
-                    <span class="podcast-ep-num">02</span>
-                    <div class="podcast-play-btn">&#9654;</div>
-                </div>
-                <div class="podcast-info">
-                    <h3>АР и АВА. Интервью с Тоби Маутнджоем</h3>
-                    <div class="podcast-guest">Гость: Тоби Маутнджой</div>
-                    <p>Разговор о профессиональной позиции внутри ABA. Как клиническое мышление соотносится с протоколом, какие микро-решения принимает специалист и почему данные — это не всегда trial-by-trial.</p>
-                    <div class="podcast-meta">
-                        <span class="podcast-ceu">1 CEU Cultural</span>
-                        <span class="podcast-price-tag">1 500 ₽</span>
-                    </div>
-                    <div class="podcast-btns">
-                        <a href="https://psihogolik.getcourse.ru/autism_partnership" target="_blank" class="btn-pink small">Смотреть</a>
-                        <a href="https://psihogolik.getcourse.ru/autism_partnership" target="_blank" class="btn-yellow small">Купить доступ</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="podcast-card">
-                <div class="podcast-img pc3">
-                    <img src="photo/sectionPodcast/podcasts03.png" alt="АВА в групповом формате" class="podcast-img-bg">
-                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
-                    <span class="podcast-ep-num">03</span>
-                    <div class="podcast-play-btn">&#9654;</div>
-                </div>
-                <div class="podcast-info">
-                    <h3>АВА в групповом формате</h3>
-                    <div class="podcast-guest">Гость: Ксения Хвостова</div>
-                    <p>Как выстраивать поведенческую терапию в групповом формате, какие программы работают в группах, реальные примеры из групповых занятий.</p>
-                    <div class="podcast-meta">
-                        <span class="podcast-ceu">1 CEU General</span>
-                        <span class="podcast-price-tag">500 ₽</span>
-                    </div>
-                    <div class="podcast-btns">
-                        <a href="https://psihogolik.getcourse.ru/ABA_therapy_in_a_group_format" target="_blank" class="btn-pink small">Смотреть</a>
-                        <a href="https://psihogolik.getcourse.ru/ABA_therapy_in_a_group_format" target="_blank" class="btn-yellow small">Купить доступ</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="podcast-card">
-                <div class="podcast-img pc4">
-                    <img src="photo/sectionPodcast/podcasts04.png" alt="Подкаст 04" class="podcast-img-bg">
-                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
-                    <span class="podcast-ep-num">04</span>
-                    <div class="podcast-play-btn">&#9654;</div>
-                </div>
-                <div class="podcast-info">
-                    <h3>Как изменилась АВА за 10 лет</h3>
-                    <div class="podcast-guest">Гость: Дарья Ли Романова</div>
-                    <p>Закрытый подкаст об изменениях в профессии за последнее десятилетие.</p>
-                    <div class="podcast-meta">
-                        <span class="podcast-ceu">2 CEU Cultural</span>
-                        <span class="podcast-price-tag">2 500 ₽</span>
-                    </div>
-                    <div class="podcast-btns">
-                        <a href="https://psihogolik.getcourse.ru/private_podcast_with_Daria_Li_Romanova" target="_blank" class="btn-yellow small">Купить доступ</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="podcast-card">
-                <div class="podcast-img pc5">
-                    <img src="photo/sectionPodcast/podcasts05.png" alt="Подкаст 05" class="podcast-img-bg">
-                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
-                    <span class="podcast-ep-num">05</span>
-                    <div class="podcast-play-btn">&#9654;</div>
-                </div>
-                <div class="podcast-info">
-                    <h3>Круглый стол — Вера, культура и АВА-терапия</h3>
-                    <p>5 спикеров из 4 стран: Россия, Кыргызстан, Канада, Израиль. Просмотр бесплатно на YouTube.</p>
-                    <div class="podcast-meta">
-                        <span class="podcast-ceu">1,5 CEU Cultural</span>
-                        <span class="podcast-price-tag">1 500 ₽</span>
-                    </div>
-                    <div class="podcast-btns">
-                        <a href="https://psihogolik.getcourse.ru/krugliistol" target="_blank" class="btn-pink small">Смотреть</a>
-                        <a href="https://psihogolik.getcourse.ru/krugliistol" target="_blank" class="btn-yellow small">Купить доступ</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="podcast-card">
-                <div class="podcast-img pc6">
-                    <img src="photo/sectionPodcast/podcasts06.png" alt="Подкаст 06" class="podcast-img-bg">
-                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
-                    <span class="podcast-ep-num">06</span>
-                    <div class="podcast-play-btn">&#9654;</div>
-                </div>
-                <div class="podcast-info">
-                    <h3>Коррекция сна у ребёнка с ТМНР</h3>
-                    <div class="podcast-guest">Ярослава Шушина + Елена Марчук</div>
-                    <p>Научное исследование о поведенческом вмешательстве при нарушениях сна. Вмешательство реализовывал родитель под куратством специалиста онлайн.</p>
-                    <div class="podcast-meta">
-                        <span class="podcast-ceu">1 CEU Supervision</span>
-                        <span class="podcast-price-tag">1 000 ₽</span>
-                    </div>
-                    <div class="podcast-btns">
-                        <a href="https://psihogolik.getcourse.ru/Sleep_correction" target="_blank" class="btn-pink small">Смотреть</a>
-                        <a href="https://psihogolik.getcourse.ru/Sleep_correction" target="_blank" class="btn-yellow small">Купить доступ</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="podcast-card">
-                <div class="podcast-img pc7">
-                    <img src="photo/sectionPodcast/podcasts07.png" alt="Подкаст 07" class="podcast-img-bg">
-                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
-                    <span class="podcast-ep-num">07</span>
-                    <div class="podcast-play-btn">&#9654;</div>
-                </div>
-                <div class="podcast-info">
-                    <h3>Выгорание специалистов помогающих профессий</h3>
-                    <div class="podcast-guest">Гость: Александра Малыхина</div>
-                    <p>Закрытый подкаст. Три блока: энергия и работа, отношение к себе и работе, тело и здоровье.</p>
-                    <div class="podcast-meta">
-                        <span class="podcast-ceu">1,5 CEU Ethics</span>
-                        <span class="podcast-price-tag">2 000 ₽</span>
-                    </div>
-                    <div class="podcast-btns">
-                        <a href="https://psihogolik.getcourse.ru/Burnout_of_specialists" target="_blank" class="btn-yellow small">Купить доступ</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="podcast-card">
-                <div class="podcast-img pc8">
-                    <img src="photo/sectionPodcast/podcasts08.png" alt="Подкаст 08" class="podcast-img-bg">
-                    <span class="podcast-brand">ПСИХО<br>ГОЛИК</span>
-                    <span class="podcast-ep-num">08</span>
-                    <div class="podcast-play-btn">&#9654;</div>
-                </div>
-                <div class="podcast-info">
-                    <h3>Путь к качественной жизни ученика с ТМНР</h3>
-                    <p>ABA-вмешательство через развитие навыка сканирования — без шаблонных протоколов.</p>
-                    <div class="podcast-meta">
-                        <span class="podcast-ceu">1 CEU Supervision</span>
-                        <span class="podcast-price-tag">1 000 ₽</span>
-                    </div>
-                    <div class="podcast-btns">
-                        <a href="https://psihogolik.getcourse.ru/The_path_quality_life" target="_blank" class="btn-pink small">Смотреть</a>
-                        <a href="https://psihogolik.getcourse.ru/The_path_quality_life" target="_blank" class="btn-yellow small">Купить доступ</a>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </div>
 </section>
@@ -639,37 +405,23 @@
 
                     <div class="review-card">
                         <div class="review-avatar"></div>
-                        <div class="review-name">Екатерина Широй</div>
-                        <div class="review-stars">★★★★★</div>
-                        <p>Ярослава — потрясающий специалист! После её вебинара по самостоятельной деятельности я наконец поняла, как правильно выстраивать программу для своего сына. Рекомендую всем родителям детей с РАС.</p>
+                        <div class="review-name">Екатерина Шарлай</div>
+                        <div class="review-source">Вебинар «Самодосуговая деятельность у детей с РАС»</div>
+                        <p>Ярослава, доброе утро! Вы прекрасны, вебинар потрясающий!!! Спасибо вам за проделанную работу</p>
                     </div>
 
                     <div class="review-card">
                         <div class="review-avatar"></div>
-                        <div class="review-name">Мария Коваленко</div>
-                        <div class="review-stars">★★★★★</div>
-                        <p>Прошла курс для поведенческих аналитиков. Информация подана понятно и структурировано. Очень много практических примеров, которые сразу можно применять в работе. Спасибо огромное!</p>
+                        <div class="review-name">Алена Раевская</div>
+                        <div class="review-source">Вебинар «Самодосуговая деятельность у детей с РАС»</div>
+                        <p>Я получила массу полезнейшей информации и поскольку все очень эстетично, красиво и со вкусом оформлено</p>
                     </div>
 
                     <div class="review-card">
                         <div class="review-avatar"></div>
-                        <div class="review-name">Анна Степаненко</div>
-                        <div class="review-stars">★★★★★</div>
-                        <p>Слушала подкаст про АВА-терапию в группе. Такого глубокого разбора темы я нигде не встречала. Ярослава умеет объяснять сложное просто и с юмором. Жду новых выпусков!</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-avatar"></div>
-                        <div class="review-name">Ольга Василенко</div>
-                        <div class="review-stars">★★★★★</div>
-                        <p>Вебинар по развитию речи — это просто находка! Столько новых инструментов и взглядов на проблему. После вебинара внедрила несколько техник и уже вижу результаты у своих клиентов.</p>
-                    </div>
-
-                    <div class="review-card">
-                        <div class="review-avatar"></div>
-                        <div class="review-name">Татьяна Мороз</div>
-                        <div class="review-stars">★★★★★</div>
-                        <p>Ярослава — профессионал своего дела. Её материалы для наставников помогли мне выстроить системный подход в обучении команды. Всегда на связи, отвечает на вопросы развёрнуто.</p>
+                        <div class="review-name">Мария Бондарева</div>
+                        <div class="review-source">Вебинар «Самодосуговая деятельность у детей с РАС»</div>
+                        <p>Смотрю вебинар, он вот просто «вишенка на торте», то чего не хватало до полноты картины</p>
                     </div>
 
                 </div>
@@ -684,7 +436,7 @@
     <div class="container">
         <div class="joke-inner">
             <div class="joke-left">
-                <img src="photo/my-superpower-is-sarcasm.png" alt="Мой суперпавер — сарказм" class="joke-img">
+                <img src="photo/web/superpower-sarcasm.webp" alt="Мой суперпавер — сарказм" class="joke-img" loading="lazy">
             </div>
             <div class="joke-right">
                 <div id="joke-result" class="joke-result"></div>
@@ -700,25 +452,10 @@
 <section class="contacts" id="contacts">
     <div class="container">
         <h2 class="section-title">КОНТАКТЫ<span class="title-rect"></span></h2>
-        <p class="section-intro">Написать напрямую</p>
+        <p class="section-intro">Выберите, куда написать — так ответ придёт быстрее</p>
 
         <div class="contacts-grid contacts-grid--direct">
-            <!-- Email -->
-            <a href="mailto:evgeniyamaksimova0717@gmail.com" class="contact-card contact-card--email">
-                <div class="contact-card-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                        <rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
-                        <path d="M2 7L12 13L22 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <div class="contact-card-body">
-                    <span class="contact-platform">Email</span>
-                    <span class="contact-handle">evgeniyamaksimova0717@gmail.com</span>
-                    <span class="contact-action">Написать письмо →</span>
-                </div>
-            </a>
-
-            <!-- Telegram -->
+            <!-- Telegram: ассистент -->
             <a href="https://t.me/psihogolik_help" target="_blank" rel="noopener" class="contact-card contact-card--telegram">
                 <div class="contact-card-icon">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
@@ -727,9 +464,26 @@
                     </svg>
                 </div>
                 <div class="contact-card-body">
-                    <span class="contact-platform">Telegram</span>
+                    <span class="contact-platform">Telegram · ассистент</span>
                     <span class="contact-handle">@psihogolik_help</span>
-                    <span class="contact-action">Написать →</span>
+                    <span class="contact-desc">Покупки и доступы, вопросы по вебинарам, запись на индивидуальные супервизии и консультации</span>
+                    <span class="contact-action">Написать ассистенту →</span>
+                </div>
+            </a>
+
+            <!-- Email: лично Ярославе -->
+            <a href="mailto:yaroslavashushina@yandex.com" class="contact-card contact-card--email">
+                <div class="contact-card-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
+                        <path d="M2 7L12 13L22 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="contact-card-body">
+                    <span class="contact-platform">Email · лично Ярославе</span>
+                    <span class="contact-handle">yaroslavashushina@yandex.com</span>
+                    <span class="contact-desc">Личные вопросы, сотрудничество и приглашения на выступления</span>
+                    <span class="contact-action">Написать письмо →</span>
                 </div>
             </a>
         </div>
@@ -835,7 +589,7 @@
 </section>
 
 <!-- ══════════════ FOOTER ══════════════ -->
-<footer class="footer" id="ceu">
+<footer class="footer">
     <div class="container">
         <div class="footer-grid">
 
@@ -844,77 +598,43 @@
                 <a href="#" class="footer-logo-text">ПСИХО-<br>ГОЛИК</a>
                 <p class="footer-tagline">АВА-подкаст, вебинары и материалы для специалистов и родителей детей с РАС.</p>
                 <div class="footer-social">
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/aba.psihogolik/" target="_blank" aria-label="Instagram" class="social-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
-                    </svg>
-                </a>
-                <!-- Telegram -->
-                <a href="https://t.me/ABA_psihogolik" target="_blank" aria-label="Telegram" class="social-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <!-- YouTube -->
-                <a href="https://www.youtube.com/@psihogolik" target="_blank" aria-label="YouTube" class="social-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22.5 6.5C22.2 5.3 21.3 4.4 20.1 4.1C18.1 3.5 12 3.5 12 3.5C12 3.5 5.9 3.5 3.9 4.1C2.7 4.4 1.8 5.3 1.5 6.5C0.9 8.5 0.9 12.5 0.9 12.5C0.9 12.5 0.9 16.5 1.5 18.5C1.8 19.7 2.7 20.6 3.9 20.9C5.9 21.5 12 21.5 12 21.5C12 21.5 18.1 21.5 20.1 20.9C21.3 20.6 22.2 19.7 22.5 18.5C23.1 16.5 23.1 12.5 23.1 12.5C23.1 12.5 23.1 8.5 22.5 6.5Z" stroke="currentColor" stroke-width="2"/>
-                        <path d="M9.75 15.5L15.5 12L9.75 8.5V15.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <!-- ВКонтакте -->
-                <a href="https://vk.com/psihogol" target="_blank" aria-label="ВКонтакте" class="social-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 7H6.5C6.5 7 6.8 13 10 13C11 13 11.5 12.3 11.5 11.5V7H15V12C15 12 15.2 15 18 15C19.5 15 20 14 20 14V18H16C16 18 9 17.5 6 12C3.3 7.3 2 7 2 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <!-- Яндекс Музыка -->
-                <a href="https://music.yandex.ru/album/24835858" target="_blank" aria-label="Яндекс Музыка" class="social-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                        <path d="M9 8L13.5 12L9 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="15" cy="12" r="1.5" fill="currentColor"/>
-                    </svg>
-                </a>
-                <!-- Boosty -->
-                <a href="https://boosty.to/psihogolik" target="_blank" aria-label="Boosty" class="social-link social-link--boosty">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 19L12 5L19 19H5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                        <path d="M8 14H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </a>
-                <!-- GetCourse -->
-                <a href="https://psihogolik.getcourse.ru/BloknotPsihogolika" target="_blank" aria-label="GetCourse" class="social-link social-link--gc">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2"/>
-                        <path d="M8 12H16M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </a>
-                <!-- Email -->
-                <a href="mailto:yaroslavashushina@yandex.com" aria-label="Email" class="social-link">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="2"/>
-                        <path d="M2 7L12 13L22 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </a>
+                    <a href="https://www.instagram.com/aba.psihogolik/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                    </a>
+                    <a href="https://t.me/psihogolik_help" target="_blank" rel="noopener" aria-label="Telegram" class="footer-social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@psihogolik" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.5 6.5C22.2 5.3 21.3 4.4 20.1 4.1C18.1 3.5 12 3.5 12 3.5C12 3.5 5.9 3.5 3.9 4.1C2.7 4.4 1.8 5.3 1.5 6.5C0.9 8.5 0.9 12.5 0.9 12.5C0.9 12.5 0.9 16.5 1.5 18.5C1.8 19.7 2.7 20.6 3.9 20.9C5.9 21.5 12 21.5 12 21.5C12 21.5 18.1 21.5 20.1 20.9C21.3 20.6 22.2 19.7 22.5 18.5C23.1 16.5 23.1 12.5 23.1 12.5C23.1 12.5 23.1 8.5 22.5 6.5Z" stroke="currentColor" stroke-width="2"/><path d="M9.75 15.5L15.5 12L9.75 8.5V15.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="https://vk.com/psihogol" target="_blank" rel="noopener" aria-label="ВКонтакте" class="footer-social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H6.5C6.5 7 6.8 13 10 13C11 13 11.5 12.3 11.5 11.5V7H15V12C15 12 15.2 15 18 15C19.5 15 20 14 20 14V18H16C16 18 9 17.5 6 12C3.3 7.3 2 7 2 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="https://music.yandex.ru/album/24835858" target="_blank" rel="noopener" aria-label="Яндекс Музыка" class="footer-social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M9 8L13.5 12L9 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="12" r="1.5" fill="currentColor"/></svg>
+                    </a>
+                    <a href="https://boosty.to/psihogolik" target="_blank" rel="noopener" aria-label="Boosty" class="footer-social-link footer-social-link--boosty">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 19L12 5L19 19H5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 14H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </a>
+                    <a href="https://psihogolik.getcourse.ru/BloknotPsihogolika" target="_blank" rel="noopener" aria-label="GetCourse" class="footer-social-link footer-social-link--gc">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2"/><path d="M8 12H16M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </a>
+                    <a href="mailto:yaroslavashushina@yandex.com" aria-label="Email" class="footer-social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M2 7L12 13L22 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </a>
+                </div>
             </div>
-            </div><!-- /footer-col--brand -->
 
             <!-- Col 2: Navigation -->
             <div class="footer-col">
                 <div class="footer-col-title">Разделы</div>
                 <nav class="footer-col-nav">
                     <a href="#webinars">Вебинары</a>
-                    <a href="#consultations">Консультации</a>
-                    <a href="#performances">Выступления</a>
-                    <a href="#blog">Блог</a>
                     <a href="#podcasts">Подкасты</a>
+                    <a href="#performances">Конференции</a>
+                    <a href="#consultations">Консультации</a>
+                    <a href="journal.html">Журнал</a>
                     <a href="#contacts">Контакты</a>
-                    <a href="#ceu">CEU</a>
                 </nav>
             </div>
 
@@ -922,11 +642,11 @@
             <div class="footer-col">
                 <div class="footer-col-title">Связь</div>
                 <nav class="footer-col-nav">
+                    <a href="https://t.me/psihogolik_help" target="_blank" rel="noopener">Ассистент в Telegram @psihogolik_help</a>
                     <a href="mailto:yaroslavashushina@yandex.com">yaroslavashushina@yandex.com</a>
-                    <a href="https://t.me/ABA_psihogolik" target="_blank">Telegram @ABA_psihogolik</a>
-                    <a href="https://www.instagram.com/aba.psihogolik/" target="_blank">Instagram @aba.psihogolik</a>
-                    <a href="https://www.youtube.com/@psihogolik" target="_blank">YouTube @psihogolik</a>
-                    <a href="https://boosty.to/psihogolik" target="_blank">Boosty</a>
+                    <a href="https://t.me/assistant_unicorn_bot" target="_blank" rel="noopener">Журнал — @assistant_unicorn_bot</a>
+                    <a href="https://www.instagram.com/aba.psihogolik/" target="_blank" rel="noopener">Instagram @aba.psihogolik</a>
+                    <a href="https://www.youtube.com/@psihogolik" target="_blank" rel="noopener">YouTube @psihogolik</a>
                 </nav>
             </div>
 
@@ -935,10 +655,9 @@
                 <div class="footer-col-title">Документы</div>
                 <nav class="footer-col-nav">
                     <a href="privacy.html">Политика конфиденциальности</a>
-                    <a href="privacy.html">Пользовательское соглашение</a>
                 </nav>
                 <div class="footer-cta-col">
-                    <a href="https://t.me/psihogolik_help" target="_blank" class="btn-yellow small">Записаться на консультацию</a>
+                    <a href="https://t.me/psihogolik_help" target="_blank" rel="noopener" class="btn-yellow small">Записаться на консультацию</a>
                 </div>
             </div>
 
@@ -949,24 +668,6 @@
         </div>
     </div>
 </footer>
-
-<!-- ══════════════ INVITE MODAL ══════════════ -->
-<div id="invite-modal" class="invite-overlay" hidden>
-    <div class="invite-modal">
-        <button class="invite-close" id="invite-close" aria-label="Закрыть">&times;</button>
-        <h3 class="invite-title">Пригласить на выступление</h3>
-        <p class="invite-subtitle">Заполните форму — я свяжусь с вами в ближайшее время</p>
-        <!-- Замените src на ссылку из Яндекс.Форм: Поделиться → Встроить → скопируй src из iframe -->
-        <iframe
-            id="invite-frame"
-            src="about:blank"
-            data-src="https://forms.yandex.ru/u/69e8604949363940a6d01939?iframe=1"
-            name="ya-form-69e8604949363940a6d01939"
-            class="invite-frame"
-            frameborder="0">
-        </iframe>
-    </div>
-</div>
 
 <!-- ══════════════ GETCOURSE OVERLAY ══════════════ -->
 <div id="gc-overlay" class="gc-overlay" hidden>
@@ -998,12 +699,12 @@
         </svg>
         <span>Подкасты</span>
     </a>
-    <a href="#blog" class="mbn-item">
+    <a href="journal.html" class="mbn-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M22.5 6.5C22.2 5.3 21.3 4.4 20.1 4.1C18.1 3.5 12 3.5 12 3.5C12 3.5 5.9 3.5 3.9 4.1C2.7 4.4 1.8 5.3 1.5 6.5C0.9 8.5 0.9 12.5 0.9 12.5C0.9 12.5 0.9 16.5 1.5 18.5C1.8 19.7 2.7 20.6 3.9 20.9C5.9 21.5 12 21.5 12 21.5C12 21.5 18.1 21.5 20.1 20.9C21.3 20.6 22.2 19.7 22.5 18.5C23.1 16.5 23.1 12.5 23.1 12.5C23.1 12.5 23.1 8.5 22.5 6.5Z" stroke="currentColor" stroke-width="2"/>
-            <path d="M9.75 15.5L15.5 12L9.75 8.5V15.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M4 21.5A2.5 2.5 0 0 1 6.5 19H20v3H6.5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
         </svg>
-        <span>Блог</span>
+        <span>Журнал</span>
     </a>
     <a href="#contacts" class="mbn-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -1023,12 +724,5 @@
 <script src="script.js"></script>
 
 <button class="back-to-top" id="backToTop" aria-label="Наверх">↑</button>
-<script>
-    const btn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-        btn.classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
-    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-</script>
 </body>
 </html>

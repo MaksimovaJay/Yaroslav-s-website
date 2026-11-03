@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блокнот Психоголика — журнал Ярославы Шушиной</title>
-    <meta name="description" content="Авторский журнал об АВА-терапии, людях и профессии. Живые истории специалистов, родителей и людей с аутизмом. Первый выпуск — о выгорании.">
+    <meta name="description" content="Авторский журнал об АВА-терапии, людях и профессии. Новые статьи минимум два раза в месяц, бесплатные баллы CEU и закрытые подкасты для подписчиков. Подписка в Telegram.">
+    <link rel="canonical" href="https://psihogolik.com/journal.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://psihogolik.com/journal.html">
     <meta property="og:title" content="Блокнот Психоголика — журнал Ярославы Шушиной">
-    <meta property="og:description" content="Авторский журнал об АВА-терапии, людях и профессии. Живые истории специалистов, родителей и людей с аутизмом.">
+    <meta property="og:description" content="Живые истории специалистов, родителей и людей с аутизмом. Статьи минимум два раза в месяц, CEU и закрытые подкасты для подписчиков.">
     <meta property="og:image" content="https://psihogolik.com/photo/open_graph/open_graph.png">
     <meta property="og:locale" content="ru_RU">
     <meta name="twitter:card" content="summary_large_image">
@@ -21,259 +22,398 @@
     <link rel="icon" href="photo/logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <style>
-        .jn-section { padding: 72px 0; }
-        .jn-section--dark  { background: var(--text-dark); }
+        /* ── Placeholders: подсветка мест, которые ждут текста от журналистки ── */
+        .todo {
+            outline: 2px dashed var(--yellow);
+            outline-offset: 3px;
+            border-radius: 6px;
+            background: rgba(250,190,62,.12);
+        }
+
+        .jn-section { padding: 80px 0; }
         .jn-section--light { background: var(--white); }
-        .jn-section--gray  { background: var(--light-gray); }
+        .jn-section--pink  { background: var(--light-pink); }
         .jn-section--beige { background: var(--beige); }
+        .jn-section--dark  { background: var(--text-dark); }
 
-        .jn-label {
-            font-size: 11px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--salmon);
+        .jn-eyebrow {
             display: block;
-            margin-bottom: 14px;
-        }
-        .jn-h1 {
-            font-size: 52px;
-            font-weight: 900;
-            color: var(--white);
-            line-height: 1.05;
-            margin-bottom: 20px;
-        }
-        .jn-h2 {
-            font-size: 28px;
-            font-weight: 900;
-            color: var(--text-dark);
-            line-height: 1.2;
-            margin-bottom: 36px;
-            text-align: center;
-        }
-        .jn-h2--light { color: var(--white); text-align: left; }
-
-        /* ── Hero ── */
-        .jn-hero {
-            background: var(--text-dark);
-            padding: 130px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        .jn-hero::before {
-            content: 'БЛОКНОТ';
-            position: absolute;
-            right: -20px;
-            top: 50%;
-            transform: translateY(-50%) rotate(90deg);
-            transform-origin: center;
-            font-size: 120px;
-            font-weight: 900;
-            color: rgba(255,255,255,.03);
-            white-space: nowrap;
-            pointer-events: none;
-            letter-spacing: 8px;
-        }
-        .jn-hero-inner {
-            display: grid;
-            grid-template-columns: 1fr 280px;
-            gap: 64px;
-            align-items: center;
-        }
-        .jn-hero p {
-            font-size: 16px;
-            color: rgba(255,255,255,.6);
-            line-height: 1.7;
-            max-width: 520px;
-            margin-bottom: 36px;
-        }
-        .jn-hero-cover {
-            border-radius: var(--radius-lg);
-            aspect-ratio: 3/4;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,.25);
-        }
-        .jn-hero-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .jn-hero-cover::after {
-            content: '';
-            position: absolute;
-            bottom: -40px; right: -40px;
-            width: 160px; height: 160px;
-            border-radius: 50%;
-            background: rgba(255,255,255,.08);
-        }
-        .jn-cover-title {
-            font-size: 22px;
-            font-weight: 900;
-            color: var(--white);
-            line-height: 1.15;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-        }
-        .jn-cover-issue {
             font-size: 12px;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: rgba(255,255,255,.7);
-            border: 1.5px solid rgba(255,255,255,.4);
-            border-radius: 50px;
-            padding: 5px 14px;
-        }
-        .jn-cover-theme {
-            font-size: 13px;
-            color: rgba(255,255,255,.85);
-            font-weight: 700;
-            margin-top: auto;
-            padding-top: 20px;
-        }
-
-        /* ── Story ── */
-        .jn-story-inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            align-items: start;
-        }
-        .jn-story-text p {
-            font-size: 15px;
-            color: var(--text-mid);
-            line-height: 1.75;
-            margin-bottom: 16px;
-        }
-        .jn-story-text p:last-child { margin-bottom: 0; }
-        .jn-story-quote {
-            background: var(--light-pink);
-            border-left: 4px solid var(--medium-pink);
-            border-radius: 0 var(--radius) var(--radius) 0;
-            padding: 24px 28px;
-            font-size: 17px;
-            font-weight: 700;
+            letter-spacing: 1.5px;
             color: var(--dark-pink);
-            line-height: 1.6;
-            font-style: italic;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .jn-section--dark .jn-eyebrow { color: var(--medium-pink); }
+        .jn-h2 {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--text-dark);
+            line-height: 1.2;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .jn-section--dark .jn-h2 { color: var(--white); }
+        .jn-lead {
+            font-size: 16px;
+            color: var(--text-mid);
+            line-height: 1.7;
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 44px;
+        }
+        .jn-section--dark .jn-lead { color: rgba(255,255,255,.65); }
+
+        /* ── Hero ── */
+        .jn-hero {
+            background:
+                radial-gradient(120% 140% at 10% 0%, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 45%),
+                linear-gradient(150deg, var(--medium-pink) 0%, var(--dark-pink) 55%, var(--salmon) 100%);
+            padding: 140px 0 110px;
+            position: relative;
+            overflow: hidden;
+        }
+        .jn-hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 64px;
+            align-items: center;
+        }
+        .jn-hero-label {
+            display: inline-block;
+            background: rgba(255,255,255,.2);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding: 7px 16px;
+            border-radius: 50px;
+            margin-bottom: 22px;
+        }
+        .jn-hero h1 {
+            font-size: 58px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.02;
+            margin-bottom: 20px;
+        }
+        .jn-hero-promise {
+            font-size: 19px;
+            font-weight: 600;
+            color: rgba(255,255,255,.95);
+            line-height: 1.55;
+            max-width: 540px;
+            margin-bottom: 32px;
+        }
+        .jn-hero-btns { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+        .jn-hero-coffee {
+            font-size: 14px;
+            font-weight: 700;
+            color: rgba(255,255,255,.9);
+            margin-top: 18px;
+        }
+        .jn-hero-cover {
+            position: relative;
+            transform: rotate(3deg);
+        }
+        .jn-hero-cover img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            box-shadow: 0 30px 70px rgba(60,20,20,.35);
+            display: block;
+        }
+        .jn-hero-sticker {
+            position: absolute;
+            left: -28px; bottom: 28px;
+            background: var(--yellow);
+            color: var(--text-dark);
+            font-weight: 900;
+            font-size: 14px;
+            line-height: 1.2;
+            text-align: center;
+            padding: 14px 16px;
+            border-radius: 50%;
+            width: 104px; height: 104px;
+            display: flex; align-items: center; justify-content: center;
+            transform: rotate(-12deg);
+            box-shadow: 0 10px 24px rgba(0,0,0,.18);
         }
 
-        /* ── About ── */
-        .jn-about-grid {
+        /* ── Stats strip ── */
+        .jn-stats-wrap { margin-top: -52px; position: relative; z-index: 2; }
+        .jn-stats {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: 0 16px 40px -16px rgba(90,45,35,.25);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .jn-stat {
+            text-align: center;
+            padding: 28px 16px;
+            border-right: 1px solid #f0e0da;
+        }
+        .jn-stat:last-child { border-right: none; }
+        .jn-stat-num { font-size: 34px; font-weight: 900; color: var(--brown); line-height: 1; margin-bottom: 8px; }
+        .jn-stat-label { font-size: 13px; font-weight: 700; color: var(--text-mid); line-height: 1.4; }
+
+        /* ── Benefits ── */
+        .jn-benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .jn-benefit {
+            background: #fdf0ec;
+            border-radius: var(--radius-md);
+            padding: 30px 28px;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+        .jn-benefit-icon {
+            flex-shrink: 0;
+            width: 50px; height: 50px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--medium-pink), var(--dark-pink));
+            color: var(--white);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .jn-benefit:nth-child(2) .jn-benefit-icon { background: linear-gradient(135deg, var(--yellow), var(--salmon)); }
+        .jn-benefit:nth-child(3) .jn-benefit-icon { background: linear-gradient(135deg, var(--salmon), var(--brown)); }
+        .jn-benefit:nth-child(4) .jn-benefit-icon { background: linear-gradient(135deg, var(--dark-pink), var(--yellow)); }
+        .jn-benefit h3 { font-size: 17px; font-weight: 900; color: var(--text-dark); margin-bottom: 6px; }
+        .jn-benefit p { font-size: 14.5px; color: var(--text-mid); line-height: 1.6; }
+
+        /* ── Audiences ── */
+        .jn-aud {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            gap: 20px;
         }
-        .jn-about-card {
+        .jn-aud-card {
             background: var(--white);
             border-radius: var(--radius-lg);
             padding: 32px 28px;
             border-top: 4px solid var(--medium-pink);
         }
-        .jn-about-card--salmon { border-top-color: var(--salmon); }
-        .jn-about-card--yellow { border-top-color: var(--yellow); }
-        .jn-about-card h3 {
-            font-size: 16px;
-            font-weight: 900;
-            color: var(--text-dark);
-            margin-bottom: 12px;
-        }
-        .jn-about-card p {
-            font-size: 14px;
-            color: var(--text-mid);
-            line-height: 1.6;
-        }
+        .jn-aud-card:nth-child(2) { border-top-color: var(--salmon); }
+        .jn-aud-card:nth-child(3) { border-top-color: var(--yellow); }
+        .jn-aud-card h3 { font-size: 17px; font-weight: 900; color: var(--text-dark); margin-bottom: 14px; }
+        .jn-aud-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .jn-aud-card li { font-size: 14px; color: var(--text-mid); line-height: 1.55; display: flex; gap: 10px; }
+        .jn-aud-card li::before { content: '\2014'; color: var(--dark-pink); font-weight: 900; flex-shrink: 0; }
 
-        /* ── First issue ── */
-        .jn-issue-inner {
+        /* ── Excerpts (teaser) ── */
+        .jn-excerpts {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: start;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
         }
-        .jn-issue-label {
+        .jn-excerpt {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 28px 26px 24px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 28px -14px rgba(90,45,35,.22);
+        }
+        .jn-excerpt-tag {
+            align-self: flex-start;
             font-size: 11px;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--medium-pink);
-            display: block;
-            margin-bottom: 12px;
-        }
-        .jn-issue-title {
-            font-size: 32px;
-            font-weight: 900;
-            color: var(--white);
-            line-height: 1.15;
-            margin-bottom: 20px;
-        }
-        .jn-issue-text p {
-            font-size: 15px;
-            color: rgba(255,255,255,.65);
-            line-height: 1.75;
+            letter-spacing: 1px;
+            color: var(--dark-pink);
+            background: var(--light-pink);
+            border-radius: 50px;
+            padding: 5px 12px;
             margin-bottom: 14px;
         }
-        .jn-issue-facts {
+        .jn-excerpt h3 { font-size: 18px; font-weight: 900; color: var(--text-dark); line-height: 1.3; margin-bottom: 6px; }
+        .jn-excerpt-author { font-size: 13px; font-weight: 700; color: var(--salmon); margin-bottom: 16px; }
+        .jn-excerpt-body {
+            position: relative;
+            max-height: 230px;
+            overflow: hidden;
+            flex: 1;
+        }
+        .jn-excerpt-body p { font-size: 15px; color: var(--text-mid); line-height: 1.7; margin-bottom: 12px; }
+        .jn-excerpt-body::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 120px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), var(--white) 85%);
+        }
+        .jn-excerpt-more {
+            margin-top: 8px;
             display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .jn-issue-fact {
-            background: rgba(255,255,255,.06);
-            border: 1px solid rgba(255,255,255,.1);
-            border-radius: var(--radius-lg);
-            padding: 20px 24px;
+            align-items: center;
+            gap: 10px;
             font-size: 14px;
-            color: rgba(255,255,255,.7);
-            line-height: 1.6;
-        }
-        .jn-issue-fact strong {
-            display: block;
-            color: var(--white);
             font-weight: 900;
-            margin-bottom: 6px;
+            color: var(--dark-pink);
+        }
+        .jn-excerpt-more:hover { color: var(--text-dark); }
+        .jn-excerpt-lock {
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            background: var(--light-pink);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
         }
 
-        /* ── CTA ── */
-        .jn-cta {
-            background: var(--text-dark);
-            padding: 80px 0;
+        /* ── Support / story ── */
+        .jn-story {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 56px;
+            align-items: center;
+        }
+        .jn-story-text p { font-size: 16px; color: rgba(255,255,255,.72); line-height: 1.75; margin-bottom: 16px; }
+        .jn-story-text .jn-h2, .jn-story-text .jn-eyebrow { text-align: left; }
+        .jn-story-quote {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.1);
+            border-left: 4px solid var(--medium-pink);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: 28px 30px;
+            font-size: 18px;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--white);
+            line-height: 1.6;
+        }
+        .jn-story-quote cite { display: block; margin-top: 14px; font-size: 14px; font-style: normal; color: var(--medium-pink); }
+        .jn-goals {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 48px;
+        }
+        .jn-goal {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: var(--radius-md);
+            padding: 22px 24px;
+            color: rgba(255,255,255,.72);
+            font-size: 14px;
+            line-height: 1.55;
+        }
+        .jn-goal strong { display: block; color: var(--white); font-size: 15px; font-weight: 900; margin-bottom: 6px; }
+
+        /* ── Price (two cups of coffee) ── */
+        .jn-price {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 20px 50px -20px rgba(90,45,35,.3);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+        }
+        .jn-price-left {
+            background: linear-gradient(150deg, var(--medium-pink) 0%, var(--dark-pink) 60%, var(--salmon) 100%);
+            color: var(--white);
+            padding: 40px 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .jn-cups { display: flex; gap: 10px; margin-bottom: 18px; }
+        .jn-cups svg { width: 48px; height: 48px; }
+        .jn-price-eq { font-size: 15px; font-weight: 700; opacity: .9; margin-bottom: 6px; }
+        .jn-price-num { font-size: 46px; font-weight: 900; line-height: 1; }
+        .jn-price-period { font-size: 15px; font-weight: 700; opacity: .85; margin-top: 6px; }
+        .jn-price-right { padding: 40px 36px; }
+        .jn-price-right h3 { font-size: 18px; font-weight: 900; color: var(--text-dark); margin-bottom: 18px; }
+        .jn-price-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 26px; }
+        .jn-price-list li { font-size: 14.5px; color: var(--text-mid); line-height: 1.5; display: flex; gap: 10px; }
+        .jn-price-list li::before { content: '\2713'; color: var(--dark-pink); font-weight: 900; flex-shrink: 0; }
+        .jn-price-right .btn-yellow { display: block; text-align: center; }
+        .jn-price-note { font-size: 12.5px; color: var(--text-mid); text-align: center; margin-top: 12px; }
+
+        /* ── Steps ── */
+        .jn-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .jn-step { background: var(--white); border-radius: var(--radius-md); padding: 28px 26px; }
+        .jn-step-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--medium-pink); color: var(--white);
+            font-weight: 900; font-size: 18px; margin-bottom: 14px;
+        }
+        .jn-step h3 { font-size: 16px; font-weight: 900; color: var(--text-dark); margin-bottom: 8px; }
+        .jn-step p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+        .jn-step a { color: var(--dark-pink); font-weight: 800; }
+
+        /* ── Reviews ── */
+        .jn-reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .jn-review { background: #f7ece5; border-radius: var(--radius-md); padding: 26px 24px; }
+        .jn-review p { font-size: 15px; font-style: italic; color: var(--text-dark); line-height: 1.6; margin-bottom: 14px; }
+        .jn-review-name { font-size: 14px; font-weight: 900; color: var(--dark-pink); }
+        .jn-review-role { font-size: 12.5px; color: var(--text-mid); }
+
+        /* ── FAQ ── */
+        .jn-faq { max-width: 760px; margin: 36px auto 0; display: flex; flex-direction: column; gap: 10px; }
+        .jn-faq details { background: var(--white); border-radius: var(--radius-md); }
+        .jn-faq summary {
+            list-style: none; cursor: pointer;
+            padding: 19px 22px;
+            font-size: 15px; font-weight: 800; color: var(--text-dark);
+            display: flex; justify-content: space-between; align-items: center; gap: 12px;
+        }
+        .jn-faq summary::-webkit-details-marker { display: none; }
+        .jn-faq summary::after {
+            content: '+'; flex-shrink: 0;
+            width: 24px; height: 24px; border-radius: 50%;
+            background: var(--light-pink); color: var(--dark-pink); font-weight: 900;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .jn-faq details[open] summary::after { content: '\2212'; background: var(--dark-pink); color: var(--white); }
+        .jn-faq details p { padding: 0 22px 20px; font-size: 14.5px; color: var(--text-mid); line-height: 1.65; }
+        .jn-faq a { color: var(--dark-pink); font-weight: 800; }
+
+        /* ── Final CTA ── */
+        .jn-final {
+            background: linear-gradient(135deg, var(--dark-pink) 0%, var(--salmon) 100%);
+            padding: 84px 0;
             text-align: center;
         }
-        .jn-cta h2 {
-            font-size: 32px;
-            font-weight: 900;
-            color: var(--white);
-            margin-bottom: 16px;
-        }
-        .jn-cta p {
-            font-size: 15px;
-            color: rgba(255,255,255,.55);
-            max-width: 460px;
-            margin: 0 auto 36px;
-            line-height: 1.7;
-        }
+        .jn-final h2 { font-size: 34px; font-weight: 900; color: var(--white); margin-bottom: 14px; }
+        .jn-final p { font-size: 16px; color: rgba(255,255,255,.88); max-width: 540px; margin: 0 auto 32px; line-height: 1.7; }
 
         /* ── Responsive ── */
         @media (max-width: 1024px) {
-            .jn-h1 { font-size: 38px; }
+            .jn-hero h1 { font-size: 46px; }
+            .jn-hero-inner { grid-template-columns: 1fr 260px; gap: 40px; }
+            .jn-excerpts { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
-            .jn-hero { padding: 100px 0 60px; }
+            .jn-section { padding: 56px 0; }
+            .jn-hero { padding: 104px 0 90px; }
             .jn-hero-inner { grid-template-columns: 1fr; }
-            .jn-hero-cover { max-width: 220px; }
-            .jn-story-inner { grid-template-columns: 1fr; gap: 32px; }
-            .jn-about-grid { grid-template-columns: 1fr; }
-            .jn-issue-inner { grid-template-columns: 1fr; gap: 32px; }
-            .jn-section { padding: 52px 0; }
-            .jn-h1 { font-size: 30px; }
+            .jn-hero h1 { font-size: 38px; }
+            .jn-hero-promise { font-size: 16px; }
+            .jn-hero-cover { max-width: 220px; margin: 0 auto; }
+            .jn-hero-sticker { width: 86px; height: 86px; font-size: 12px; left: -20px; }
+            .jn-stats { grid-template-columns: repeat(2, 1fr); }
+            .jn-stat:nth-child(2) { border-right: none; }
+            .jn-stat:nth-child(-n+2) { border-bottom: 1px solid #f0e0da; }
+            .jn-h2 { font-size: 26px; }
+            .jn-benefits, .jn-aud, .jn-excerpts, .jn-goals, .jn-steps, .jn-reviews { grid-template-columns: 1fr; }
+            .jn-story { grid-template-columns: 1fr; gap: 32px; }
+            .jn-price { grid-template-columns: 1fr; }
+            .jn-final h2 { font-size: 28px; }
         }
     </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header" id="header">
     <div class="container">
         <nav class="nav">
@@ -282,10 +422,9 @@
             </a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#webinars">Вебинары</a></li>
-                <li><a href="index.html#consultations">Консультации</a></li>
-                <li><a href="index.html#performances">Выступления</a></li>
-                <li><a href="index.html#blog">Блог</a></li>
                 <li><a href="index.html#podcasts">Подкасты</a></li>
+                <li><a href="index.html#performances">Конференции</a></li>
+                <li><a href="index.html#consultations">Консультации</a></li>
                 <li><a href="journal.html" class="nav-ceu">Журнал</a></li>
                 <li><a href="index.html#contacts">Контакты</a></li>
             </ul>
@@ -296,157 +435,431 @@
     </div>
 </header>
 
-<!-- HERO -->
+<!-- ══════════════ HERO ══════════════ -->
 <section class="jn-hero">
     <div class="container">
         <div class="jn-hero-inner">
             <div>
-                <span class="jn-label">Авторский журнал</span>
-                <h1 class="jn-h1">Блокнот<br>Психоголика</h1>
-                <p>Журнал, о котором я мечтала много лет — и о котором теперь говорит моё профессиональное сообщество. Профессиональный язык встречается с человеческой уязвимостью. Честно, живо, без прикрас.</p>
-                <!-- ССЫЛКА: заменить href на ссылку Boosty когда будет готова -->
-                <a href="https://boosty.to/psihogolik/bundle/c185e741-c24c-43b9-befe-e390fa6b3b4d?isFromShowcasePreview=true" class="btn-yellow">Поддержать и купить</a>
+                <span class="jn-hero-label">Авторский журнал · подписка в Telegram</span>
+                <h1>Блокнот<br>Психоголика</h1>
+                <!-- ТЕКСТ ОТ ЖУРНАЛИСТКИ: главное обещание журнала, 1–2 фразы -->
+                <p class="jn-hero-promise">Журнал, где профессиональный язык АВА встречается с человеческой уязвимостью и силой. Честные истории специалистов, родителей и людей с аутизмом — без прикрас.</p>
+                <div class="jn-hero-btns">
+                    <a href="https://t.me/assistant_unicorn_bot" target="_blank" rel="noopener" class="btn-yellow">Подписаться в Telegram</a>
+                    <a href="#excerpts" class="btn-outline-light">Читать отрывки</a>
+                </div>
+                <p class="jn-hero-coffee">☕☕ Стоит как две чашки кофе в месяц</p>
             </div>
             <div class="jn-hero-cover">
-                <img src="photo/db/cover_db.png" alt="Блокнот Психоголика — обложка первого выпуска">
+                <img src="photo/web/journal-cover.webp" alt="Блокнот Психоголика — обложка выпуска">
+                <span class="jn-hero-sticker">Новое каждые 2 недели</span>
             </div>
         </div>
     </div>
 </section>
 
-<!-- STORY -->
+<!-- ══════════════ STATS ══════════════ -->
+<div class="jn-stats-wrap">
+    <div class="container">
+        <div class="jn-stats">
+            <div class="jn-stat">
+                <div class="jn-stat-num">2+</div>
+                <div class="jn-stat-label">новые статьи<br>каждый месяц</div>
+            </div>
+            <div class="jn-stat">
+                <div class="jn-stat-num">CEU</div>
+                <div class="jn-stat-label">бесплатные баллы<br>для подписчиков</div>
+            </div>
+            <div class="jn-stat">
+                <div class="jn-stat-num">🎧</div>
+                <div class="jn-stat-label">закрытые<br>подкасты</div>
+            </div>
+            <div class="jn-stat">
+                <!-- ЦИФРА: можно заменить (подписчики / герои / выпуски) -->
+                <div class="jn-stat-num">50</div>
+                <div class="jn-stat-label">экземпляров<br>первого тиража</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════ WHAT YOU GET ══════════════ -->
 <section class="jn-section jn-section--light">
     <div class="container">
-        <div class="jn-story-inner">
-            <div>
-                <span class="jn-label">Как всё началось</span>
-                <h2 class="jn-h2 jn-h2--light" style="color:var(--text-dark)">За 10 лет практики я поняла:<br>об этом надо говорить</h2>
-                <div class="jn-story-text">
-                    <p>За 10 лет в АВА я осознала, что невозможно говорить только о супервизиях, протоколах и учениках. За всем этим стоит колоссальный труд, подвижничество и храбрость обычного неравнодушного человека.</p>
-                    <p>В ноябре 2025 года вместе с журналисткой и главным редактором Иларией Страдиной я запустила первый онлайн-выпуск о выгорании. А 20 февраля 2026 года уже держала бумажный журнал в руках. Первый тираж — 50 экземпляров.</p>
-                    <p>От простого замысла рассказывать об аутизме «Блокнот Психоголика» превратился в пространство, где профессиональный язык встретился с человеческой уязвимостью и силой через живые истории.</p>
+        <span class="jn-eyebrow">Что даёт подписка</span>
+        <h2 class="jn-h2">Не просто журнал — пространство,<br>где вас понимают</h2>
+        <p class="jn-lead">Каждая подписка — это регулярные материалы для работы и жизни, а не одна случайная статья.</p>
+        <div class="jn-benefits">
+            <div class="jn-benefit">
+                <div class="jn-benefit-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/></svg>
+                </div>
+                <div>
+                    <h3>Новые статьи минимум 2 раза в месяц</h3>
+                    <p>Интервью, истории и разборы — о профессии, выгорании, семье и жизни в спектре.</p>
                 </div>
             </div>
-            <div class="jn-story-quote">
-                «Каждая страница журнала — это моё личное признание в любви и благодарность коллегам, психиатрам, психологам, родителям, всем, кто посвятил теме аутизма большую часть своей жизни.»
+            <div class="jn-benefit">
+                <div class="jn-benefit-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 7.5 21l4.5-2.5 4.5 2.5-1.5-7.5"/></svg>
+                </div>
+                <div>
+                    <h3>Бесплатные баллы CEU</h3>
+                    <p><span class="todo">Периодически подписчики получают баллы CEU бесплатно — [как часто, какие категории].</span></p>
+                </div>
+            </div>
+            <div class="jn-benefit">
+                <div class="jn-benefit-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg>
+                </div>
+                <div>
+                    <h3>Закрытые подкасты</h3>
+                    <p><span class="todo">Выпуски, которых нет в открытом доступе — [темы, гости, как часто].</span></p>
+                </div>
+            </div>
+            <div class="jn-benefit">
+                <div class="jn-benefit-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+                </div>
+                <div>
+                    <h3>Поддерживающие гайды</h3>
+                    <p>Например, гайд «Когда больше нет сил» — без призывов «соберись», но с правом почувствовать: ты не один, с тобой всё в порядке.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ABOUT -->
-<section class="jn-section jn-section--gray">
+<!-- ══════════════ AUDIENCES ══════════════ -->
+<section class="jn-section jn-section--beige">
     <div class="container">
-        <h2 class="jn-h2">Для кого этот журнал</h2>
-        <div class="jn-about-grid">
-            <div class="jn-about-card">
-                <h3>Поведенческие аналитики и АВА-специалисты</h3>
-                <p>Неудобные тексты про АВА, где вместе со специалистами мы спорим, сомневаемся и пересматриваем взгляды — но продолжаем искать лучшее для семей и аутичных людей.</p>
+        <span class="jn-eyebrow">Практическая польза</span>
+        <h2 class="jn-h2">Что журнал даст именно вам</h2>
+        <p class="jn-lead">Мы не делаем из аутизма трагедию или суперспособность. Мы говорим о людях — разных, уставших, растерянных и всё ещё сильных.</p>
+        <div class="jn-aud">
+            <div class="jn-aud-card">
+                <h3>АВА-специалистам и аналитикам</h3>
+                <ul>
+                    <li>Неудобные тексты про АВА: спорим, сомневаемся, пересматриваем взгляды</li>
+                    <li>Опыт коллег и история профессии — например, как начинался Autism Partnership</li>
+                    <li><span class="todo">[что конкретно специалист унесёт в работу]</span></li>
+                </ul>
             </div>
-            <div class="jn-about-card jn-about-card--salmon">
-                <h3>Родители детей с аутизмом</h3>
-                <p>Откровенные разговоры о том, как принять диагноз и при этом не потерять себя. Интервью с теми, кто держался из последних сил — и выдержал.</p>
+            <div class="jn-aud-card">
+                <h3>Родителям детей с аутизмом</h3>
+                <ul>
+                    <li>Откровенные разговоры о том, как принять диагноз и не потерять себя</li>
+                    <li>Интервью с теми, кто держался из последних сил — и выдержал</li>
+                    <li><span class="todo">[практическая польза для родителя]</span></li>
+                </ul>
             </div>
-            <div class="jn-about-card jn-about-card--yellow">
-                <h3>Люди с аутизмом</h3>
-                <p>Честный разговор с аутичными людьми, которые говорят о своём опыте изнутри — без страха показаться странными или «поломанными».</p>
+            <div class="jn-aud-card">
+                <h3>Людям с аутизмом и всем, кому близка тема</h3>
+                <ul>
+                    <li>Опыт изнутри — от людей в спектре, без страха показаться «странными»</li>
+                    <li>Язык, на котором можно говорить о сложном честно и бережно</li>
+                    <li><span class="todo">[ещё один пункт]</span></li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- FIRST ISSUE -->
+<!-- ══════════════ EXCERPTS (teaser → bot) ══════════════ -->
+<section class="jn-section jn-section--pink" id="excerpts">
+    <div class="container">
+        <span class="jn-eyebrow">Отрывки из журнала</span>
+        <h2 class="jn-h2">Начните читать прямо сейчас</h2>
+        <p class="jn-lead">Продолжение каждой истории — у подписчиков в Telegram.</p>
+        <div class="jn-excerpts">
+
+            <!-- ОТРЫВОК 1: заголовок, автор и 2–3 абзаца начала статьи. Текст сам растворится внизу. -->
+            <article class="jn-excerpt">
+                <span class="jn-excerpt-tag">Выгорание</span>
+                <h3><span class="todo">[Заголовок статьи]</span></h3>
+                <div class="jn-excerpt-author"><span class="todo">[Автор / герой]</span></div>
+                <div class="jn-excerpt-body">
+                    <p class="todo">[Первый абзац статьи — то, что цепляет. 3–4 предложения.]</p>
+                    <p class="todo">[Второй абзац. На середине мысли текст плавно растворится — и читатель захочет узнать, что дальше.]</p>
+                </div>
+                <a href="https://t.me/assistant_unicorn_bot" target="_blank" rel="noopener" class="jn-excerpt-more">
+                    <span class="jn-excerpt-lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+                    Читать продолжение в Telegram →
+                </a>
+            </article>
+
+            <!-- ОТРЫВОК 2 -->
+            <article class="jn-excerpt">
+                <span class="jn-excerpt-tag">История</span>
+                <h3>Как начинался Autism Partnership</h3>
+                <div class="jn-excerpt-author"><span class="todo">[Автор]</span></div>
+                <div class="jn-excerpt-body">
+                    <p>Маленькая факс-машина, несколько семей и отсутствие офиса — так в Гонконге начиналась история Autism Partnership.</p>
+                    <p class="todo">[Продолжение отрывка из статьи — 2–3 предложения, обрываются на интересном месте.]</p>
+                </div>
+                <a href="https://t.me/assistant_unicorn_bot" target="_blank" rel="noopener" class="jn-excerpt-more">
+                    <span class="jn-excerpt-lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+                    Читать продолжение в Telegram →
+                </a>
+            </article>
+
+            <!-- ОТРЫВОК 3 -->
+            <article class="jn-excerpt">
+                <span class="jn-excerpt-tag">Родителям</span>
+                <h3><span class="todo">[Заголовок статьи]</span></h3>
+                <div class="jn-excerpt-author"><span class="todo">[Автор / герой]</span></div>
+                <div class="jn-excerpt-body">
+                    <p class="todo">[Первый абзац статьи.]</p>
+                    <p class="todo">[Второй абзац — обрывается на самом интересном.]</p>
+                </div>
+                <a href="https://t.me/assistant_unicorn_bot" target="_blank" rel="noopener" class="jn-excerpt-more">
+                    <span class="jn-excerpt-lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+                    Читать продолжение в Telegram →
+                </a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ SUPPORT THE PROJECT ══════════════ -->
 <section class="jn-section jn-section--dark">
     <div class="container">
-        <div class="jn-issue-inner">
-            <div class="jn-issue-text">
-                <span class="jn-issue-label">Что внутри журнала</span>
-                <h2 class="jn-issue-title">Живые истории.<br>Неудобные вопросы.</h2>
-                <p>Мы не создаём из аутизма трагедию или суперспособность. Человек в спектре — не «особенный герой», а разный, уставший, местами растерянный, но всё ещё сильный человек.</p>
-                <p>В журнале есть поддерживающий гайд «Когда больше нет сил» — без призывов «соберись», но с легальным правом почувствовать: ты не один, с тобой всё в порядке, мы рядом.</p>
+        <div class="jn-story">
+            <div class="jn-story-text">
+                <span class="jn-eyebrow">Поддержите новое начинание</span>
+                <h2 class="jn-h2">За 10 лет практики я поняла:<br>об этом надо говорить</h2>
+                <p>За 10 лет в АВА я осознала, что невозможно говорить только о супервизиях, протоколах и учениках. За всем этим стоит колоссальный труд, подвижничество и храбрость обычного неравнодушного человека.</p>
+                <p>В ноябре 2025 года вместе с журналисткой и главным редактором Иларией Страдиной мы запустили первый онлайн-выпуск — о выгорании. А 20 февраля 2026 года я уже держала в руках бумажный журнал.</p>
+                <p>«Блокнот Психоголика» — молодой независимый проект. Каждая подписка помогает ему жить и расти.</p>
             </div>
-            <div class="jn-issue-facts">
-                <div class="jn-issue-fact">
-                    <strong>Интервью о выгорании</strong>
-                    Специалисты помогающих профессий и родители, которые держались из последних сил
-                </div>
-                <div class="jn-issue-fact">
-                    <strong>История Autism Partnership</strong>
-                    Маленькая факс-машина, несколько семей, отсутствие офиса — как начинался AP в Гонконге
-                </div>
-                <div class="jn-issue-fact">
-                    <strong>Онлайн — ноябрь 2025 · Печать — 20 февраля 2026</strong>
-                    Первый тираж — 50 экземпляров. Электронная версия на Boosty.
-                </div>
+            <blockquote class="jn-story-quote">
+                «Каждая страница журнала — это моё личное признание в любви и благодарность коллегам, психиатрам, психологам, родителям, всем, кто посвятил теме аутизма большую часть своей жизни.»
+                <cite>— Ярослава Шушина, автор проекта</cite>
+            </blockquote>
+        </div>
+        <div class="jn-goals">
+            <div class="jn-goal">
+                <strong>На что идёт ваша подписка</strong>
+                <span class="todo">[гонорары авторам, интервью, печать — уточнить]</span>
+            </div>
+            <div class="jn-goal">
+                <strong>Ближайшая цель</strong>
+                <span class="todo">[например, новый печатный тираж или следующий выпуск]</span>
+            </div>
+            <div class="jn-goal">
+                <strong>Станьте героем выпуска</strong>
+                Говорите о нас, делитесь историями — возможно, именно ваш голос даст кому-то силы двигаться дальше.
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA -->
-<section class="jn-cta">
+<!-- ══════════════ PRICE ══════════════ -->
+<section class="jn-section jn-section--light" id="price">
     <div class="container">
-        <h2>Присоединяйтесь</h2>
-        <p>Говорите о нас, поддерживайте журнал и становитесь героями новых выпусков. Возможно, именно ваш голос даст кому-то из нас силы двигаться дальше.</p>
-        <!-- ССЫЛКА: заменить href на ссылку Boosty -->
-        <a href="https://boosty.to/psihogolik/bundle/c185e741-c24c-43b9-befe-e390fa6b3b4d?isFromShowcasePreview=true" class="btn-yellow">Поддержать и купить</a>
+        <span class="jn-eyebrow">Подписка</span>
+        <h2 class="jn-h2">Меньше, чем две чашки кофе</h2>
+        <p class="jn-lead">Кофе закончится через пять минут. Журнал останется с вами — и поможет проекту жить.</p>
+        <div class="jn-price">
+            <div class="jn-price-left">
+                <div class="jn-cups" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3c0 1.5 1 1.5 1 3M12 3c0 1.5 1 1.5 1 3"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3c0 1.5 1 1.5 1 3M12 3c0 1.5 1 1.5 1 3"/></svg>
+                </div>
+                <div class="jn-price-eq">☕ + ☕ =</div>
+                <!-- ЦЕНА: вписать сумму и период -->
+                <div class="jn-price-num"><span class="todo">[000] ₽</span></div>
+                <div class="jn-price-period"><span class="todo">в месяц</span></div>
+            </div>
+            <div class="jn-price-right">
+                <h3>Что входит в подписку</h3>
+                <ul class="jn-price-list">
+                    <li>Новые статьи минимум 2 раза в месяц</li>
+                    <li>Бесплатные баллы CEU</li>
+                    <li>Закрытые подкасты</li>
+                    <li><span class="todo">[архив прошлых выпусков?]</span></li>
+                </ul>
+                <a href="https://t.me/assistant_unicorn_bot" target="_blank" rel="noopener" class="btn-yellow">Поддержать и подписаться</a>
+                <p class="jn-price-note">Оформление и оплата — в Telegram-боте @assistant_unicorn_bot</p>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══════════════ HOW TO SUBSCRIBE ══════════════ -->
+<section class="jn-section jn-section--beige">
+    <div class="container">
+        <span class="jn-eyebrow">Три шага</span>
+        <h2 class="jn-h2">Как подписаться</h2>
+        <p class="jn-lead">Всё происходит в Telegram — без регистраций на сторонних сайтах.</p>
+        <div class="jn-steps">
+            <div class="jn-step">
+                <span class="jn-step-num">1</span>
+                <h3>Откройте бота</h3>
+                <p>Перейдите в <a href="https://t.me/assistant_unicorn_bot" target="_blank" rel="noopener">@assistant_unicorn_bot</a> и нажмите «Старт».</p>
+            </div>
+            <div class="jn-step">
+                <span class="jn-step-num">2</span>
+                <h3>Оформите подписку</h3>
+                <p>Бот расскажет о стоимости и вариантах оплаты.</p>
+            </div>
+            <div class="jn-step">
+                <span class="jn-step-num">3</span>
+                <h3>Читайте и слушайте</h3>
+                <p>После оплаты откроется доступ к статьям, подкастам и бонусам.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ REVIEWS ══════════════ -->
+<section class="jn-section jn-section--light">
+    <div class="container">
+        <span class="jn-eyebrow">Читатели о журнале</span>
+        <h2 class="jn-h2">Что говорят о «Блокноте»</h2>
+        <p class="jn-lead">О журнале уже говорит профессиональное сообщество.</p>
+        <div class="jn-reviews">
+            <div class="jn-review">
+                <p class="todo">«[Отзыв читателя]»</p>
+                <div class="jn-review-name"><span class="todo">[Имя]</span></div>
+                <div class="jn-review-role"><span class="todo">[АВА-специалист / родитель]</span></div>
+            </div>
+            <div class="jn-review">
+                <p class="todo">«[Отзыв читателя]»</p>
+                <div class="jn-review-name"><span class="todo">[Имя]</span></div>
+                <div class="jn-review-role"><span class="todo">[роль]</span></div>
+            </div>
+            <div class="jn-review">
+                <p class="todo">«[Отзыв героя выпуска]»</p>
+                <div class="jn-review-name"><span class="todo">[Имя]</span></div>
+                <div class="jn-review-role"><span class="todo">[роль]</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ FAQ ══════════════ -->
+<section class="jn-section jn-section--pink">
+    <div class="container">
+        <span class="jn-eyebrow">Вопросы</span>
+        <h2 class="jn-h2">Частые вопросы</h2>
+        <div class="jn-faq">
+            <details>
+                <summary>Как часто выходят новые материалы?</summary>
+                <p>Новые статьи — минимум два раза в месяц. Периодически подписчики получают бесплатные баллы CEU и закрытые подкасты.</p>
+            </details>
+            <details>
+                <summary>Как отменить подписку?</summary>
+                <p><span class="todo">[Ответ — уточнить, как устроено в боте]</span></p>
+            </details>
+            <details>
+                <summary>Можно ли оплатить из-за рубежа?</summary>
+                <p><span class="todo">[Ответ — уточнить]</span></p>
+            </details>
+            <details>
+                <summary>Есть ли печатная версия?</summary>
+                <p>Первый печатный тираж — 50 экземпляров — вышел 20 февраля 2026 года. <span class="todo">[Можно ли купить сейчас?]</span></p>
+            </details>
+            <details>
+                <summary>У меня вопрос по оплате или доступу</summary>
+                <p>Напишите ассистенту в Telegram — <a href="https://t.me/psihogolik_help" target="_blank" rel="noopener">@psihogolik_help</a>.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ FINAL CTA ══════════════ -->
+<section class="jn-final">
+    <div class="container">
+        <h2>Поддержите журнал, который<br>говорит о важном честно</h2>
+        <p>Две чашки кофе в месяц — и у проекта появляется возможность жить, а у вас — регулярные истории, баллы CEU и закрытые подкасты.</p>
+        <a href="https://t.me/assistant_unicorn_bot" target="_blank" rel="noopener" class="btn-yellow">Подписаться в Telegram</a>
+    </div>
+</section>
+
 <footer class="footer">
     <div class="container">
-        <div class="footer-top">
-            <a href="index.html" class="footer-logo-text">ПСИХО-<br>ГОЛИК</a>
-            <div class="footer-nav">
-                <a href="index.html#webinars">Вебинары</a>
-                <a href="index.html#consultations">Консультации</a>
-                <a href="index.html#performances">Выступления</a>
-                <a href="index.html#blog">Блог</a>
-                <a href="index.html#podcasts">Подкасты</a>
-                <a href="journal.html">Журнал</a>
-                <a href="index.html#contacts">Контакты</a>
+        <div class="footer-grid">
+
+            <!-- Col 1: Logo + tagline -->
+            <div class="footer-col footer-col--brand">
+                <a href="index.html" class="footer-logo-text">ПСИХО-<br>ГОЛИК</a>
+                <p class="footer-tagline">АВА-подкаст, вебинары и материалы для специалистов и родителей детей с РАС.</p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/aba.psihogolik/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                    </a>
+                    <a href="https://t.me/psihogolik_help" target="_blank" rel="noopener" aria-label="Telegram" class="footer-social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@psihogolik" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.5 6.5C22.2 5.3 21.3 4.4 20.1 4.1C18.1 3.5 12 3.5 12 3.5C12 3.5 5.9 3.5 3.9 4.1C2.7 4.4 1.8 5.3 1.5 6.5C0.9 8.5 0.9 12.5 0.9 12.5C0.9 12.5 0.9 16.5 1.5 18.5C1.8 19.7 2.7 20.6 3.9 20.9C5.9 21.5 12 21.5 12 21.5C12 21.5 18.1 21.5 20.1 20.9C21.3 20.6 22.2 19.7 22.5 18.5C23.1 16.5 23.1 12.5 23.1 12.5C23.1 12.5 23.1 8.5 22.5 6.5Z" stroke="currentColor" stroke-width="2"/><path d="M9.75 15.5L15.5 12L9.75 8.5V15.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="https://vk.com/psihogol" target="_blank" rel="noopener" aria-label="ВКонтакте" class="footer-social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7H6.5C6.5 7 6.8 13 10 13C11 13 11.5 12.3 11.5 11.5V7H15V12C15 12 15.2 15 18 15C19.5 15 20 14 20 14V18H16C16 18 9 17.5 6 12C3.3 7.3 2 7 2 7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="https://music.yandex.ru/album/24835858" target="_blank" rel="noopener" aria-label="Яндекс Музыка" class="footer-social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M9 8L13.5 12L9 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="12" r="1.5" fill="currentColor"/></svg>
+                    </a>
+                    <a href="https://boosty.to/psihogolik" target="_blank" rel="noopener" aria-label="Boosty" class="footer-social-link footer-social-link--boosty">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 19L12 5L19 19H5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 14H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </a>
+                    <a href="https://psihogolik.getcourse.ru/BloknotPsihogolika" target="_blank" rel="noopener" aria-label="GetCourse" class="footer-social-link footer-social-link--gc">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2"/><path d="M8 12H16M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </a>
+                    <a href="mailto:yaroslavashushina@yandex.com" aria-label="Email" class="footer-social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M2 7L12 13L22 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </a>
+                </div>
             </div>
-        </div>
+
+            <!-- Col 2: Navigation -->
+            <div class="footer-col">
+                <div class="footer-col-title">Разделы</div>
+                <nav class="footer-col-nav">
+                    <a href="index.html#webinars">Вебинары</a>
+                    <a href="index.html#podcasts">Подкасты</a>
+                    <a href="index.html#performances">Конференции</a>
+                    <a href="index.html#consultations">Консультации</a>
+                    <a href="journal.html">Журнал</a>
+                    <a href="index.html#contacts">Контакты</a>
+                </nav>
+            </div>
+
+            <!-- Col 3: Contacts -->
+            <div class="footer-col">
+                <div class="footer-col-title">Связь</div>
+                <nav class="footer-col-nav">
+                    <a href="https://t.me/psihogolik_help" target="_blank" rel="noopener">Ассистент в Telegram @psihogolik_help</a>
+                    <a href="mailto:yaroslavashushina@yandex.com">yaroslavashushina@yandex.com</a>
+                    <a href="https://t.me/assistant_unicorn_bot" target="_blank" rel="noopener">Журнал — @assistant_unicorn_bot</a>
+                    <a href="https://www.instagram.com/aba.psihogolik/" target="_blank" rel="noopener">Instagram @aba.psihogolik</a>
+                    <a href="https://www.youtube.com/@psihogolik" target="_blank" rel="noopener">YouTube @psihogolik</a>
+                </nav>
+            </div>
+
+            <!-- Col 4: Documents -->
+            <div class="footer-col">
+                <div class="footer-col-title">Документы</div>
+                <nav class="footer-col-nav">
+                    <a href="privacy.html">Политика конфиденциальности</a>
+                </nav>
+                <div class="footer-cta-col">
+                    <a href="https://t.me/psihogolik_help" target="_blank" rel="noopener" class="btn-yellow small">Записаться на консультацию</a>
+                </div>
+            </div>
+
+        </div><!-- /footer-grid -->
+
         <div class="footer-bottom">
             <span>© 2026 Ярослава Шушина. Все права защищены.</span>
-            <a href="privacy.html" class="footer-privacy">Политика конфиденциальности</a>
         </div>
     </div>
 </footer>
 
-<script>
-    const header = document.getElementById('header');
-    if (header) {
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 40);
-        }, { passive: true });
-    }
-    const burger = document.getElementById('burger');
-    const links  = document.getElementById('nav-links');
-    if (burger && links) {
-        burger.addEventListener('click', () => {
-            burger.classList.toggle('open');
-            links.classList.toggle('open');
-            document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
-        });
-        links.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => {
-                burger.classList.remove('open');
-                links.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-        });
-    }
-</script>
-
 <button class="back-to-top" id="backToTop" aria-label="Наверх">↑</button>
-<script>
-    const btn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-        btn.classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
-    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-</script>
+
+<script src="script.js"></script>
 </body>
 </html>
