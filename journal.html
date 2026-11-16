@@ -190,17 +190,19 @@
         .jn-benefit p { font-size: 14.5px; color: var(--text-mid); line-height: 1.6; }
 
         /* ── Issues ── */
-        .jn-issues { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: start; }
+        .jn-issues { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
         .jn-issue {
             background: var(--white);
             border-radius: var(--radius-md);
             overflow: hidden;
             box-shadow: 0 14px 34px -18px rgba(90,45,35,.3);
+            display: flex;
+            flex-direction: column;
         }
         .jn-issue-cover { aspect-ratio: 3/4; overflow: hidden; background: var(--light-pink); }
         .jn-issue-cover img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
         .jn-issue:hover .jn-issue-cover img { transform: scale(1.03); }
-        .jn-issue-body { padding: 24px 24px 26px; }
+        .jn-issue-body { padding: 24px 24px 26px; flex: 1; display: flex; flex-direction: column; }
         .jn-issue-num { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.2px; color: var(--dark-pink); }
         .jn-issue h3 { font-size: 20px; font-weight: 900; color: var(--text-dark); margin: 6px 0 4px; }
         .jn-issue-date { font-size: 13px; font-weight: 700; color: var(--salmon); margin-bottom: 14px; }
@@ -209,9 +211,9 @@
         .jn-issue-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
         .jn-issue-list li { font-size: 14px; font-weight: 700; color: var(--text-dark); line-height: 1.4; }
         .jn-issue-list li span { display: block; font-size: 12px; font-weight: 700; color: var(--salmon); }
-        .jn-issue--soon .jn-issue-cover { aspect-ratio: 4/3; }
+        .jn-issue--soon .jn-issue-cover img { object-position: center 30%; }
         .jn-issue--soon p { font-size: 14px; color: var(--text-mid); line-height: 1.6; margin-bottom: 12px; }
-        .jn-issue-link { font-size: 14px; font-weight: 900; color: var(--dark-pink); }
+        .jn-issue-link { font-size: 14px; font-weight: 900; color: var(--dark-pink); margin-top: auto; }
 
         /* ── Live gallery ── */
         .jn-gallery {
